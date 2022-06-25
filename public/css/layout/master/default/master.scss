@@ -1,0 +1,37 @@
+@import "../../../global/sizing";
+@import "../../../global/themerc";
+
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    background-color: $PRIMARY-LIGHT;
+}
+
+body {
+
+    width: 100vw;
+    min-width: 320px;
+
+    height: 100vh;
+    min-height: 568px;
+
+    overflow: hidden auto;
+
+    background-color: inherit;
+
+    @include on_md_and_up() 
+    { min-width: 768px; }
+
+    @include on_lg_and_up() 
+    { min-width: 992px; }
+
+    @include on_xl_and_up()
+    { min-width: 1200px; }
+
+    @include on_xxl_and_up() 
+    { min-width: 1400px; }
+
+}

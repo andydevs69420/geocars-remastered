@@ -1,0 +1,35 @@
+.local-variant-selector__wrapper {
+  position: absolute;
+  right: 15px;
+  bottom: 15px;
+  z-index: 3;
+}
+
+.variant {
+  width: 28px;
+  height: 28px;
+  border-radius: 1000%;
+  background-color: transparent;
+}
+
+.variant.v-active {
+  border: 3px solid rgb(83, 83, 240);
+}
+
+.variant.v-inactive {
+  border: 3px solid rgb(196, 196, 204);
+}
+
+#variant__light > span[role=button] {
+  width: 72%;
+  height: 72%;
+  border-radius: inherit;
+  background-color: rgb(252, 248, 248);
+}
+
+#variant__dark > span[role=button] {
+  width: 72%;
+  height: 72%;
+  border-radius: inherit;
+  background-color: rgb(20, 13, 13);
+}/*# sourceMappingURL=local-variant-selector.css.map */

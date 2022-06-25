@@ -1,0 +1,37 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  background-color: rgb(20, 13, 13);
+}
+
+body {
+  width: 100vw;
+  min-width: 320px;
+  height: 100vh;
+  min-height: 568px;
+  overflow: hidden auto;
+  background-color: inherit;
+}
+@media screen and (min-width: 768px) {
+  body {
+    min-width: 768px;
+  }
+}
+@media screen and (min-width: 992px) {
+  body {
+    min-width: 992px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  body {
+    min-width: 1200px;
+  }
+}
+@media screen and (min-width: 1400px) {
+  body {
+    min-width: 1400px;
+  }
+}/*# sourceMappingURL=master.css.map */

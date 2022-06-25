@@ -1,0 +1,11 @@
+
+/*
+    Light styling
+*/
+light -> #34ebde;
+
+
+/*
+    Dark styling
+*/
+dark  -> #060217;
