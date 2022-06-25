@@ -46,11 +46,27 @@
 }
 
 #register__panel {
-  z-index: 5;
+  position: relative;
+  z-index: 2;
+  padding-top: 1.5em;
+  padding-bottom: 1.5em;
+  max-height: 100% !important;
 }
 @media screen and (min-width: 576px) {
   #register__panel {
+    padding-top: 0;
+    padding-bottom: 0;
     max-width: 65% !important;
     background-color: rgb(20, 13, 13) !important;
+  }
+}
+
+.register__vr {
+  display: none;
+  color: rgb(252, 248, 248);
+}
+@media screen and (min-width: 576px) {
+  .register__vr {
+    display: inline-block;
   }
 }/*# sourceMappingURL=register.css.map */

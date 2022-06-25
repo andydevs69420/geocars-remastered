@@ -50,12 +50,33 @@
 
 #register__panel {
 
-    z-index: 5;
+    position: relative;
+    z-index: 2;
+    padding-top: 1.5em;
+    padding-bottom: 1.5em;
+
+    max-height: 100% !important;
 
     @include on_sm_and_up() {
 
+        padding-top: 0;
+        padding-bottom: 0;
+
         max-width: 65% !important;
         background-color: $PRIMARY-DARK !important;
+    }
+
+}
+
+.register__vr {
+
+    display: none;
+    // invert
+    color: $PRIMARY-LIGHT;
+
+    @include on_sm_and_up()
+    {
+        display: inline-block;
     }
 
 }
