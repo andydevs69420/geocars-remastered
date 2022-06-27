@@ -1,25 +1,31 @@
 @import "../../global/themerc";
 @import "../../global/sizing";
 
-
 #login__main {
     position: relative;
-    overflow-y: auto !important;
+    padding-top: 3em !important;
+    padding-bottom: 3em !important;
+    min-height: 100%;
+    @include on_sm_and_up()
+    {
+        padding-top: calc(3em + 50px) !important;
+        height: initial;
+        min-height: 100%;
+    }
 }
 
 #login__backdrop {
-
-    position: relative;
+    position: absolute;
+    top: 0;
+    left: 0;
     z-index: 1;
-
     width: 100%;
-    height: 100%;
-
+    height: auto;
+    min-height: 100%;
     background-image: url("../../../images/map-vector.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-
 }
 
 #backdrop__bg {
@@ -27,10 +33,12 @@
     z-index: 1;
     width: 100%;
     height: 100%;
-
     @supports(backdrop-filter: blur(5px)) {
         backdrop-filter: blur(5px);
         background-color: rgba(255, 255, 255, 0.15);
+    }
+    @supports not (backdrop-filter: blur(5px)) {
+        background-color: rgba(255, 255, 255, 0.65);
     }
 }
 
@@ -39,67 +47,72 @@
     z-index: 2;
     width: 100%;
     height: 100%;
-
     @supports(filter: blur(40px)) {
         filter: blur(40px);
-    }
-
-    @supports not (filter: blur(40px)) {
-        background-color: rgba(255, 255, 255, 0.65);
     }
 }
 
 #login__panel {
-
-    position: absolute;
-    top: 50%;
-    left: 50%;
     z-index: 2;
-    transform: translate(-50%, -50%);
-
     width: 100%;
     min-height: 100%;
     border-radius: 0;
-
     @include on_sm_and_up() {
         width: 22.5%;
         min-width: 360px;
         min-height: auto;
         border-radius: .2em;
-
-        background-color: $PRIMARY-LIGHT;
+        background-color: $PRIMARY-LIGHT !important;
+        box-shadow: 0 0.5rem 1rem rgb(0 0 0 / 15%) !important;
     }
+}
 
+
+#login__wave {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: 1;
+    // transform: translateX(-50%);
+}
+
+#login__wave >
+path {
+    fill: #0d6efd;
+    @include on_sm_and_up()
+    { fill: #330f1e; }
+}
+
+form {
+    z-index: 2;
+}
+
+#login__label-wrap {
+    position: absolute;
+    top: 5%;
+    left: 50%;
+    z-index: 2;
+    transform: translateX(-50%);
+    background-image: inherit !important;
+    @include on_sm_and_up()
+    {
+        position: initial;
+        top: initial;
+        left: initial;
+        transform: initial;
+        margin-top: -55px !important;
+    }
 }
 
 #login__icon-wrapper {
-
-    position: absolute;
-    top: 4%;
-    left: 50%;
-    z-index: 2;
-    transform: translateX(-50%,);
-
+    position: relative;
     padding-top: 100px;
     width: 100px;
-
     border-radius: 100%;
-
     @include on_sm_and_up() {
-
-        position: relative;
-        inset: initial;
-        transform: initial;
-
-        margin-top: -55px !important;
-
         padding-top: 110px;
         width: 110px;
-
-        border-radius: 100%;
-
     }
-
 }
 
 #login__icon-wrapper >
@@ -116,56 +129,60 @@
 }
 
 #login__signin-label {
-
-    position: absolute;
-    top: calc(4% + 104px);
-    left: 50%;
-    z-index: 2;
-    transform: translateX(-50%);
-
     // invert
     color: $PRIMARY-DARK;
-    font-weight: 300;
-
+    font-size: calc(1em + 1vw);
+    font-weight: 300 !important;
     @include on_sm_and_up() {
         position: initial;
         inset: initial;
         z-index: initial;
         transform: initial;
     }
+}
 
+#login__signin-label-II {
+    // invert
+    color: $PRIMARY-DARK !important;
 }
 
 span.input-group-text {
     min-width: 2.5em;
+    border-top-right-radius: initial !important;
+    border-bottom-right-radius: initial !important;
 }
 
+
+input {
+    border-top-right-radius: inherit !important;
+    border-bottom-right-radius: inherit !important;
+}
+
+button {
+    border-color: transparent !important;
+    border-radius: inherit !important;
+}
 
 #login__reg-link > a {
     text-decoration: none !important;
     font-weight: 300;
+    // invert
     color: $PRIMARY-DARK;
+    &:hover {
+        color: #9e67dd;
+    }
 }
 
 #login__social {
-
-    position: absolute;
-    left: 50%;
-    bottom: 10%;
-    transform: translateX(-50%);
-
-    @include on_sm_and_up() {
-        position: initial;
-        inset: initial;
-        transform: initial;
-    }
-
+    position: initial;
+    inset: initial;
+    transform: initial;
 }
 
 #login__social >
 * .login__social-icon {
     width: 38px;
     height: 38px;
-
     text-decoration: none;
 }
+

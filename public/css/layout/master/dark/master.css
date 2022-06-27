@@ -34,4 +34,9 @@ body {
   body {
     min-width: 1400px;
   }
+}
+
+#master__main {
+  position: relative !important;
+  overflow: hidden auto !important;
 }/*# sourceMappingURL=master.css.map */

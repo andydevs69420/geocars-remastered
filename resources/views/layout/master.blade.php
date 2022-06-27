@@ -14,9 +14,11 @@
 </head>
 <body>
 
-    @section("app-body")
-        {{-- body here! --}}
-    @show
+    <main id="master__main" class="d-block w-100 h-100">
+        @section("app-body")
+            {{-- body here! --}}
+        @show
+    </main>
 
     <script src="{{ asset("js/webpack/app.js") }}"></script>
     @section("javascript")

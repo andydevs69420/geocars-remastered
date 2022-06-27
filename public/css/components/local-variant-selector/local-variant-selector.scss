@@ -1,11 +1,17 @@
 @import "../../global/themerc";
+@import "../../global/sizing";
 
 .local-variant-selector__wrapper {
 
     position: absolute;
-    right: 15px;
-    bottom: 15px;
+    right: 5px;
+    bottom: 10px;
     z-index: 3;
+
+    @include on_md_and_up() {
+        right: 15px;
+        bottom: 15px;
+    }
 
 }
 
@@ -26,7 +32,8 @@
     border: 3px solid rgb(196, 196, 204);
 }
 
-#variant__light > 
+
+#variant__light >
 span[role="button"] {
 
     width: 72%;
@@ -36,7 +43,7 @@ span[role="button"] {
     background-color: $PRIMARY-LIGHT;
 }
 
-#variant__dark > 
+#variant__dark >
 span[role="button"] {
 
     width: 72%;
