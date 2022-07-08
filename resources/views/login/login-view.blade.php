@@ -33,17 +33,23 @@
                 <h6 id="login__signin-label" class="display-6 mt-1 mb-0 text-center">{{ __("SIGN IN") }}</h6>
             </div>
 
-            <svg id="login__wave" class="d-block d-sm-none" viewBox="0 0 1440 320">
-                <path fill="#330f1e" fill-opacity="1" d="M0,320L60,277.3C120,235,240,149,360,96C480,43,600,21,720,32C840,43,960,85,1080,122.7C1200,160,1320,192,1380,208L1440,224L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"></path>
+            {{-- svg 0 --}}
+            <svg id="login__wave-0" class="d-block d-sm-none" viewBox="0 0 1440 320">
+                <path fill="#fffffd" fill-opacity="1" d="M0,128L80,106.7C160,85,320,43,480,53.3C640,64,800,128,960,170.7C1120,213,1280,235,1360,245.3L1440,256L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z"></path>
+            </svg>
+
+            {{-- svg 1 --}}
+            <svg id="login__wave-1" class="d-block d-sm-none" viewBox="0 0 1440 320">
+                <path fill="#330f1e" fill-opacity="1" d="M0,128L80,106.7C160,85,320,43,480,53.3C640,64,800,128,960,170.7C1120,213,1280,235,1360,245.3L1440,256L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z"></path>
             </svg>
 
             <form class="d-block p-3" action="#" method="POST">
-                <span id="login__signin-label-II" class="d-inline d-sm-none ps-3 text-white fw-bold" role="text">{{ __("SIGN IN") }}</span>
                 <div id="login__input-wrapper" class="container-fluid">
                     <div class="row">
+                        <span id="login__signin-label-II" class="d-inline d-sm-none ps-3 text-white fw-bold" role="text">{{ __("SIGN IN") }}</span>
                         <div class="col-12">
                             <div class="input-group my-4 my-sm-3 rounded-pill shadow">
-                                <span class="input-group-text border-0 bg-white text-muted rounded-pill" role="text">
+                                <span class="input-group-text border-0 bg-white text-primary rounded-pill" role="text">
                                     <i class="fa-solid fa-envelope fa-1x"></i>
                                 </span>
                                 <input class="form-control border-0" type="email" placeholder="{{ __("email") }}" required>
@@ -51,7 +57,7 @@
                         </div>
                         <div class="col-12">
                             <div class="input-group mb-4 mb-sm-3 rounded-pill shadow">
-                                <span class="input-group-text border-0 bg-white text-muted rounded-pill" role="text">
+                                <span class="input-group-text border-0 bg-white text-primary rounded-pill" role="text">
                                     <i class="fa-solid fa-lock fa-1x"></i>
                                 </span>
                                 <input class="form-control border-0" type="password" placeholder="{{ __("password") }}" required>
@@ -99,5 +105,5 @@
 
 {{-- js --}}
 @section("javascript")
-
+    <script type="text/javascript" src="{{ asset("js/login/login-style-override.js") }}"></script>
 @stop

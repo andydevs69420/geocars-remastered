@@ -20,7 +20,8 @@
         @show
     </main>
 
-    <script src="{{ asset("js/webpack/app.js") }}"></script>
+    <script type="text/javascript" src="{{ asset("js/webpack/app.js") }}"></script>
+    <script type="text/javascript" src="{{ asset("js/layout/master/master-window-sizing.js") }}"></script>
     @section("javascript")
         {{-- other js here! --}}
     @show

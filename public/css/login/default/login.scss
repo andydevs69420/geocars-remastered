@@ -68,15 +68,26 @@
 }
 
 
-#login__wave {
+#login__wave-0 {
     position: absolute;
     left: 0;
     bottom: 0;
-    z-index: 1;
-    // transform: translateX(-50%);
+    z-index: -3;
+    transform: scaleX(-1);
 }
 
-#login__wave >
+svg {
+    filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4)) !important;
+}
+
+#login__wave-1 {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: -2;
+}
+
+#login__wave-1 >
 path {
     fill: #0d6efd;
     @include on_sm_and_up()
@@ -144,6 +155,7 @@ form {
 #login__signin-label-II {
     // invert
     color: $PRIMARY-DARK !important;
+    font-weight: 600 !important;
 }
 
 span.input-group-text {
@@ -158,8 +170,11 @@ input {
     border-bottom-right-radius: inherit !important;
 }
 
+#login__btn-signin-wrapper {
+    background-color: rgb(13, 110, 253) !important;
+}
+
 button {
-    border-color: transparent !important;
     border-radius: inherit !important;
 }
 
