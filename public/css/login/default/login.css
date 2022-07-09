@@ -167,15 +167,24 @@ form {
   font-weight: 600 !important;
 }
 
+div.input-group {
+  position: relative;
+}
+
 span.input-group-text {
+  position: absolute;
+  left: -1.6px;
+  z-index: 4;
   min-width: 2.5em;
-  border-top-right-radius: initial !important;
-  border-bottom-right-radius: initial !important;
+  height: 100%;
+  background-color: inherit !important;
+  border-top-left-radius: inherit !important;
+  border-bottom-left-radius: inherit !important;
 }
 
 input {
-  border-top-right-radius: inherit !important;
-  border-bottom-right-radius: inherit !important;
+  padding-left: 2.8em !important;
+  border-radius: inherit !important;
 }
 
 #login__btn-signin-wrapper {

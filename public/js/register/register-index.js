@@ -1,25 +1,25 @@
 
 (function(root) {
 
-    jQuery(function() {
+    jQuery(() => init());
+
+    const init = (function() {
 
         window.on_xs_and_up(() => {
-            $(".input-group-text")
-                .addClass("rounded-pill rounded-input");
+
             $(".input-group")
                 .addClass("rounded-pill");
-            $("input")
-                .addClass("rounded-input");
+            $(".register__btn-register-wrapper")
+                .addClass("rounded-pill");
+
         });
 
 
         window.on_sm_and_up(() => {
-            $(".input-group-text")
-                .removeClass("rounded-pill rounded-input");
             $(".input-group")
                 .removeClass("rounded-pill");
-            $("input")
-                .removeClass("rounded-input");
+            $(".register__btn-register-wrapper")
+                .removeClass("rounded-pill");
         });
 
         $("#register__next-btn")

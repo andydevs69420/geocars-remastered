@@ -14,7 +14,6 @@
 {{-- body --}}
 @section("app-body")
 
-
    <div id="login__main" class="d-flex align-items-center justify-content-center">
        {{-- backdrop overlay --}}
         <div id="login__backdrop" class="d-block">
@@ -27,7 +26,7 @@
             <div id="login__label-wrap" class="d-none d-sm-block mx-auto">
                 <div id="login__icon-wrapper" class="d-block mx-auto bg-white shadow-sm">
                     <div id="pre-wrap" class="d-block">
-                        <img class="img" src="{{ asset("images/geocarsapp.png") }}" alt="">
+                        <img class="img" src="{{ asset("images/geocarsapp.png") }}" alt="geocars-icon">
                     </div>
                 </div>
                 <h6 id="login__signin-label" class="display-6 mt-1 mb-0 text-center">{{ __("SIGN IN") }}</h6>
@@ -48,25 +47,25 @@
                     <div class="row">
                         <span id="login__signin-label-II" class="d-inline d-sm-none ps-3 text-white fw-bold" role="text">{{ __("SIGN IN") }}</span>
                         <div class="col-12">
-                            <div class="input-group my-4 my-sm-3 rounded-pill shadow">
-                                <span class="input-group-text border-0 bg-white text-primary rounded-pill" role="text">
+                            <div class="input-group my-4 my-sm-3 shadow rounded">
+                                <span class="input-group-text border-0 bg-white text-primary" role="text">
                                     <i class="fa-solid fa-envelope fa-1x"></i>
                                 </span>
                                 <input class="form-control border-0" type="email" placeholder="{{ __("email") }}" required>
                             </div>
                         </div>
                         <div class="col-12">
-                            <div class="input-group mb-4 mb-sm-3 rounded-pill shadow">
-                                <span class="input-group-text border-0 bg-white text-primary rounded-pill" role="text">
+                            <div class="input-group mb-4 mb-sm-3 shadow rounded">
+                                <span class="input-group-text border-0 bg-white text-primary " role="text">
                                     <i class="fa-solid fa-lock fa-1x"></i>
                                 </span>
                                 <input class="form-control border-0" type="password" placeholder="{{ __("password") }}" required>
                             </div>
                         </div>
                         <div class="col-12">
-                            <span id="login__btn-signin-wrapper" class="d-block rounded-pill mx-auto shadow">
+                            <span id="login__btn-signin-wrapper" class="d-block rounded mx-auto shadow">
                                 <button class="btn btn-primary w-100" type="submit">
-                                    {{ __("SIGNIN") }}
+                                    {{ __("SIGN IN") }}
                                 </button>
                             </span>
                         </div>
@@ -105,5 +104,5 @@
 
 {{-- js --}}
 @section("javascript")
-    <script type="text/javascript" src="{{ asset("js/login/login-style-override.js") }}"></script>
+    <script type="text/javascript" src="{{ asset("js/login/login-index.js") }}"></script>
 @stop

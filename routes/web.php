@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 // custom controller
 use App\Http\Controllers\ctrl_LoginController;
 use App\Http\Controllers\ctrl_RegisterController;
+use App\Http\Controllers\ctrl_AppMainController;
 use App\Http\Controllers\LocalVariantSelectorController;
 
 /*
@@ -36,4 +37,10 @@ Route::controller(ctrl_LoginController::class)->group(function() {
 Route::controller(ctrl_RegisterController::class)->group(function() {
     // index
     Route::get("/register", "register_page");
+});
+
+// app main
+Route::controller(ctrl_AppMainController::class)->group(function() {
+    // index
+    Route::get("/geocarsapp", "geocars_main");
 });

@@ -94,6 +94,11 @@ svg {
     z-index: -2;
 }
 
+#login__wave >
+path {
+    fill: $PRIMARY-DARK;
+}
+
 #register__label-wrap {
     position: absolute;
     top: 5%;
@@ -150,9 +155,10 @@ svg {
     }
 }
 
-#register__signup-label-II {
+.register__signup-label-II,
+.register__signup-label-II * {
     // invert
-    color: $PRIMARY-LIGHT;
+    color: $PRIMARY-LIGHT !important;
     font-weight: 600 !important;
 }
 
@@ -186,6 +192,7 @@ div.input-group {
 
 span.input-group-text {
     position: absolute;
+    left: -1.6px;
     z-index: 4;
     min-width: 2.5em;
     height: 100%;
@@ -193,40 +200,20 @@ span.input-group-text {
     border-top-left-radius: inherit !important;
     border-bottom-left-radius: inherit !important;
     @include on_sm_and_up()
-    {
-        background-color: rgb(37, 26, 26) !important;
-        border-top-left-radius: 0.25rem !important;
-        border-bottom-left-radius: 0.25rem !important;
-    }
+    { background-color: rgb(37, 26, 26) !important; }
 }
 
-span.input-group-text.rounded-input {
-    border-top-right-radius: 0 !important;
-    border-bottom-right-radius: 0 !important;
-}
-
-input {
-    padding-left: 2.6em !important;
+input, select {
+    padding-left: 2.8em !important;
+    border-radius: inherit !important;
     color: #ffffff !important;
     background-color: $PRIMARY-DARK !important;
-    border-top-left-radius: inherit !important;
-    border-bottom-left-radius: inherit !important;
     @include on_sm_and_up()
-    {
-        background-color: rgb(37, 26, 26) !important;
-        border-top-left-radius: 0.25rem !important;
-        border-bottom-left-radius: 0.25rem !important;
-    }
+    { background-color: rgb(37, 26, 26) !important; }
 }
 
 
-input.rounded-input {
-    border-top-right-radius: inherit !important;
-    border-bottom-right-radius: inherit !important;
-}
-
-
-#register__btn-register-wrapper {
+.register__btn-register-wrapper {
     background-color: rgb(13, 110, 253) !important;
 }
 

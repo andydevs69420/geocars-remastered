@@ -1,0 +1,14 @@
+#main__nav-bar {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: auto !important;
+}
+@media screen and (min-width: 576px) {
+  #main__nav-bar {
+    position: initial;
+    bottom: initial;
+    width: 14rem;
+    height: 100% !important;
+  }
+}/*# sourceMappingURL=main.css.map */

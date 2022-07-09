@@ -1,0 +1,16 @@
+@import "../../global/sizing";
+
+#main__nav-bar {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: auto !important;
+    @include on_sm_and_up() {
+        position: initial;
+        bottom: initial;
+        width: 14rem;
+        height: 100% !important;
+    }
+}
+
+
