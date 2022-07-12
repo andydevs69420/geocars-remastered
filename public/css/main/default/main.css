@@ -45,4 +45,14 @@ nav {
   #main__link-list {
     width: auto;
   }
+}
+
+#main__content-area {
+  padding-bottom: 60px;
+}
+@media screen and (min-width: 576px) {
+  #main__content-area {
+    padding-top: 60px;
+    padding-bottom: initial;
+  }
 }/*# sourceMappingURL=main.css.map */

@@ -42,3 +42,12 @@ nav {
     @include on_sm_and_up
     { width: auto; }
 }
+
+#main__content-area {
+    padding-bottom: 60px;
+    @include on_sm_and_up
+    {
+        padding-top: 60px;
+        padding-bottom: initial;
+    }
+}
