@@ -8,12 +8,26 @@
                     <div class="row">
                         <div class="col-6 col-sm-12 col-md-6 col-lg-6">
                             {{-- TILE 0 --}}
-                            <div class="d-block dashboard__tile-small bg-white mb-0 mb-sm-3 mb-md-0 shadow">
+                            <div class="d-block dashboard__tile-small mb-0 mb-sm-3 mb-md-0 shadow">
+                                <span class="tile__bg-icon text-muted">
+                                    <i class="fa-solid fa-car fa-4x"></i>
+                                </span>
+                                <div class="d-flex flex-column justify-content-center align-items-center tile__content-area">
+                                    <h3 class="h3">{{ __("0"); }}</h3>
+                                    <span class="small fw-bold">{{ __("LABEL"); }}</span>
+                                </div>
                             </div>
                         </div>
                         <div class="col-6 col-sm-12 col-md-6 col-lg-6">
                             {{-- TILE 1 --}}
-                            <div class="d-block dashboard__tile-small bg-white shadow">
+                            <div class="d-block dashboard__tile-small shadow">
+                                <span class="tile__bg-icon text-muted">
+                                    <i class="fa-solid fa-car fa-4x"></i>
+                                </span>
+                                <div class="d-flex flex-column justify-content-center align-items-center tile__content-area">
+                                    <h3 class="h3">{{ __("0"); }}</h3>
+                                    <span class="small fw-bold">{{ __("LABEL"); }}</span>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -50,11 +64,25 @@
                         <div class="col-6 col-md-6 col-lg-6">
                             {{-- TILE 2 --}}
                             <div class="d-block dashboard__tile-small mb-0 mb-sm-3 mb-md-0 shadow">
+                                <span class="tile__bg-icon text-muted">
+                                    <i class="fa-solid fa-car fa-4x"></i>
+                                </span>
+                                <div class="d-flex flex-column justify-content-center align-items-center tile__content-area">
+                                    <h3 class="h3">{{ __("0"); }}</h3>
+                                    <span class="small fw-bold">{{ __("LABEL"); }}</span>
+                                </div>
                             </div>
                         </div>
                         <div class="col-6 col-md-6 col-lg-6">
                             {{-- TILE 3 --}}
                             <div class="d-block dashboard__tile-small shadow">
+                                <span class="tile__bg-icon text-muted">
+                                    <i class="fa-solid fa-car fa-4x"></i>
+                                </span>
+                                <div class="d-flex flex-column justify-content-center align-items-center tile__content-area">
+                                    <h3 class="h3">{{ __("0"); }}</h3>
+                                    <span class="small fw-bold">{{ __("LABEL"); }}</span>
+                                </div>
                             </div>
                         </div>
                     </div>

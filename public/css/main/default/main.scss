@@ -2,7 +2,7 @@
 @import "../../global/themerc";
 
 nav {
-    position: absolute !important;
+    position: fixed !important;
     right: 0 !important;
     bottom: 0 !important;
     left: 0 !important;
@@ -45,6 +45,7 @@ nav {
 
 #main__content-area {
     padding-bottom: 60px;
+    overflow-y: hidden !important;
     @include on_sm_and_up
     {
         padding-top: 60px;

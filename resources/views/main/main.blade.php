@@ -28,7 +28,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link">
+                    <a href="#operation-page" class="nav-link">
                         <i class="d-inline d-sm-none fa-solid fa-car-side"></i> <span class="d-none d-sm-inline small">{{ __("Operation") }}</span>
                     </a>
                 </li>
@@ -46,7 +46,8 @@
         </div>
     </nav>
     <div id="main__content-area" class="container-fluid px-0 h-100" data-bs-spy="scroll" data-bs-target="#main__navbar">
-        <x-dashboard></x-dashboard>
+        <x-dashboard id="dashboard-page"></x-dashboard>
+        <x-dashboard id="operation-page"></x-dashboard>
     </div>
 @stop
 
