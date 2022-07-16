@@ -8,25 +8,21 @@
                     <div class="row">
                         <div class="col-6 col-sm-12 col-md-6 col-lg-6">
                             {{-- TILE 0 --}}
-                            <div class="d-block dashboard__tile-small mb-0 mb-sm-3 mb-md-0 shadow">
-                                <span class="tile__bg-icon text-muted">
-                                    <i class="fa-solid fa-car fa-4x"></i>
-                                </span>
-                                <div class="d-flex flex-column justify-content-center align-items-center tile__content-area">
+                            <div class="d-block dashboard__tile-small mb-0 mb-sm-4 mb-md-0 bg-primary shadow">
+                                <img class="img tile__bg-icon position-absolute" src="{{ asset("images/car-image-1.webp") }}" alt="car-image">
+                                <div class="d-flex flex-column justify-content-center align-items-center tile__content-area position-absolute text-light">
                                     <h3 class="h3">{{ __("0"); }}</h3>
-                                    <span class="small fw-bold">{{ __("LABEL"); }}</span>
+                                    <span class="small text-center text-nowrap text-truncate w-100 fw-bold">{{ __("RENT REQUEST"); }}</span>
                                 </div>
                             </div>
                         </div>
                         <div class="col-6 col-sm-12 col-md-6 col-lg-6">
                             {{-- TILE 1 --}}
-                            <div class="d-block dashboard__tile-small shadow">
-                                <span class="tile__bg-icon text-muted">
-                                    <i class="fa-solid fa-car fa-4x"></i>
-                                </span>
-                                <div class="d-flex flex-column justify-content-center align-items-center tile__content-area">
+                            <div class="d-block dashboard__tile-small mb-0 mb-sm-2 mb-md-0 bg-primary shadow">
+                                <img class="img tile__bg-icon position-absolute animate" src="{{ asset("images/car-image-2.webp") }}" alt="car-image">
+                                <div class="d-flex flex-column justify-content-center align-items-center tile__content-area position-absolute text-light">
                                     <h3 class="h3">{{ __("0"); }}</h3>
-                                    <span class="small fw-bold">{{ __("LABEL"); }}</span>
+                                    <span class="small text-center text-nowrap text-truncate w-100 fw-bold">{{ __("TO PICKUP"); }}</span>
                                 </div>
                             </div>
                         </div>
@@ -58,30 +54,26 @@
                     </span>
                 </div>
             </div>
-            <div class="col-12 col-md-6 col-lg-4 order-last">
+            <div class="col-12 col-md-6 col-lg-4 mt-2 mt-sm-0 order-last">
                 <div class="container-fluid my-2 px-0">
                     <div class="row">
                         <div class="col-6 col-md-6 col-lg-6">
                             {{-- TILE 2 --}}
-                            <div class="d-block dashboard__tile-small mb-0 mb-sm-3 mb-md-0 shadow">
-                                <span class="tile__bg-icon text-muted">
-                                    <i class="fa-solid fa-car fa-4x"></i>
-                                </span>
-                                <div class="d-flex flex-column justify-content-center align-items-center tile__content-area">
+                            <div class="d-block dashboard__tile-small mb-0 mb-sm-3 mb-md-0 bg-primary shadow">
+                                <img class="img tile__bg-icon position-absolute" src="{{ asset("images/car-image-3.webp") }}" alt="car-image">
+                                <div class="d-flex flex-column justify-content-center align-items-center tile__content-area position-absolute text-light">
                                     <h3 class="h3">{{ __("0"); }}</h3>
-                                    <span class="small fw-bold">{{ __("LABEL"); }}</span>
+                                    <span class="small text-center text-nowrap text-truncate w-100 fw-bold">{{ __("TO RETURN"); }}</span>
                                 </div>
                             </div>
                         </div>
                         <div class="col-6 col-md-6 col-lg-6">
                             {{-- TILE 3 --}}
-                            <div class="d-block dashboard__tile-small shadow">
-                                <span class="tile__bg-icon text-muted">
-                                    <i class="fa-solid fa-car fa-4x"></i>
-                                </span>
-                                <div class="d-flex flex-column justify-content-center align-items-center tile__content-area">
+                            <div class="d-block dashboard__tile-small mb-0 mb-sm-3 mb-md-0 bg-primary shadow">
+                                <img class="img tile__bg-icon position-absolute" src="{{ asset("images/car-image-4.webp") }}" alt="car-image">
+                                <div class="d-flex flex-column justify-content-center align-items-center tile__content-area position-absolute text-light">
                                     <h3 class="h3">{{ __("0"); }}</h3>
-                                    <span class="small fw-bold">{{ __("LABEL"); }}</span>
+                                    <span class="small text-center text-nowrap text-truncate w-100 fw-bold">{{ __("ALARMING"); }}</span>
                                 </div>
                             </div>
                         </div>
@@ -91,38 +83,17 @@
 
         </div>
 
-        <div class="row">
+        <div class="row my-2">
             <div class="col-12 col-md-8">
                 {{-- TILE 0 --}}
-                <div class="d-block dashboard__tile-large my-2 shadow"></div>
-            </div>
-            <div class="col-12 col-md-4">
-                <div class="card dashboard__card-tile border-0 my-2 shadow">
-                    <img class="card-img-top shadow" src="https://149366088.v2.pressablecdn.com/wp-content/uploads/2022/03/jammy-jellyfish-wallpaper.jpg" alt="">
-                    <div class="card-body">
-                        <h5 class="card-title position-relative mb-0">
-                            <i class="fa-solid fa-crown dashboard__card-tile-icon text-warning" style="text-shadow: 2px 3px rgba(0,0,0,0.4)"></i>
-                            {{ __("Plan") }}
-                            <small class="small dashboard__card-plan rounded text-light bg-warning">{{ __("Pro") }}</small>
-                        </h5>
-                        <small class="card-subtitle small text-muted">{{ __("Your current subscription") }}</small>
-
-                        <div id="dashboard__card-more-info" class="collapse">
-                            <p class="card-text">
-                                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Minus recusandae magni dolorem dicta labore? Repellendus odit dolore cupiditate maxime officia?
-                            </p>
-                        </div>
-
-                        <div class="container-fluid mt-5 text-center">
-                            <span class="d-inline-block w-auto shadow rounded-pill">
-                                <button class="btn btn-sm btn-success px-3 rounded-pill" data-bs-toggle="collapse" data-bs-target="#dashboard__card-more-info" aria-expanded="false" aria-controls="dashboard__card-more-info">
-                                    {{ __("Read more") }}
-                                </button>
-                            </span>
-                        </div>
-
+                <div class="d-block dashboard__tile-large my-2 shadow">
+                    <div class="tile__content-area position-absolute">
+                        <canvas id="dashboard__analytics-chart"></canvas>
                     </div>
                 </div>
+            </div>
+            <div class="col-12 col-md-4">
+
             </div>
         </div>
     </div>

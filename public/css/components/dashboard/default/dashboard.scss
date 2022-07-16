@@ -12,7 +12,6 @@
     position: relative;
     padding-top: 100%;
     width: 100%;
-    background-color: $PRIMARY-LIGHT;
     border-radius: .75em;
     @include on_sm_and_up
     {
@@ -32,7 +31,6 @@
     @include on_sm_and_up
     {
         padding-top: 50%;
-        min-height: calc(100% - 1rem) !important;
         border-radius: .25em;
     }
     @include on_md_and_up
@@ -41,29 +39,85 @@
 
 .dashboard__tile-small >
 .tile__content-area {
-    position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
+}
+
+
+@keyframes jump {
+    0%, 25% {
+        top: 70%;
+        transform: translate(-50%, -70%);
+        width: 75%;
+        height: 60%;
+    }
+    25%, 50% {
+        top: 60%;
+        transform: translate(-50%, -60%);
+        width: 80%;
+        height: 65%;
+    }
+    50%, 75% {
+        top: 5%;
+        transform: translate(-50%, -5%);
+        width: 85%;
+        height: 55%;
+    }
+    75%, 85% {
+        top: 15%;
+        transform: translate(-50%, -15%);
+        width: 65%;
+        height: 70%;
+    }
+    85%, 90% {
+        top: 25%;
+        transform: translate(-50%, -25%);
+        width: 65%;
+        height: 72%;
+    }
+    90%, 95% {
+        top: 35%;
+        transform: translate(-50%, -35%);
+        width: 65%;
+        height: 75%;
+    }
+    95%, 100% {
+        top: 60%;
+        transform: translate(-50%, -60%);
+        width: 65%;
+        height: 65%;
+    }
 }
 
 .dashboard__tile-small >
 .tile__bg-icon {
-    position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    opacity: 15%;
+    width: 65%;
+    height: auto;
+    @include on_sm_and_up
+    { width: 55%; }
+
+    @include on_md_and_up
+    { width: 80%; }
+}
+
+.tile__bg-icon.animate {
+    animation: jump 1s linear;
+    animation-iteration-count: infinite;
+    animation-fill-mode: both;
 }
 
 .dashboard__tile-large >
 .tile__content-area {
-    position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
+    // background-color: rgba(204, 10, 10, 0.678);
 }
 
 .dashboard__tile-large >
@@ -74,26 +128,6 @@
     transform: translate(-50%, -50%);
 }
 
-.dashboard__card-tile
-{
-    min-height: calc(100% - 1rem) !important;
-    border-radius: .75em;
-    overflow: hidden;
-    @include on_sm_and_up
-    { border-radius: .25em; }
-}
-
-.dashboard__card-tile-icon {
-    position: absolute;
-    top: -8px;
-    left: -12px;
-    transform: rotate(-35deg);
-}
-
-.dashboard__card-plan {
-    font-size: 11px;
-    padding: 0px 4px;
-}
 
 #dashboard__tile-center {
     border-radius: .75em;

@@ -3,6 +3,7 @@
 (function(root) {
 
     const EVT_STACK = [];
+    let is_Resizing = false;
 
     jQuery(() => init());
 
@@ -18,62 +19,62 @@
     });
 
     const resize_evt = (function(e){
-        EVT_STACK.forEach(each_evt => {
-            each_evt();
+        EVT_STACK.forEach(async each_evt => {
+            await each_evt();
         })
     });
 
-    const on_xs_and_up = (function(callack) {
+    const on_xs_and_up = (async function(callack) {
         if (root.innerWidth >= 0 && root.innerWidth < 576)
-            callack();
-        EVT_STACK.push((function(){
+            await callack();
+        EVT_STACK.push((async function(){
             if (root.innerWidth >= 0 && root.innerWidth < 576)
-                callack();
+                await callack();
         }));
     });
 
-    const on_sm_and_up = (function(callack) {
+    const on_sm_and_up = (async function(callack) {
         if (root.innerWidth >= 576 && root.innerWidth < 768)
-            callack();
-        EVT_STACK.push((function(){
+            await callack();
+        EVT_STACK.push((async function() {
             if (root.innerWidth >= 576 && root.innerWidth < 768)
                 callack();
         }));
     });
 
-    const on_md_and_up = (function(callack) {
+    const on_md_and_up = (async function(callack) {
         if (root.innerWidth >= 768 && root.innerWidth < 992)
-            callack();
-        EVT_STACK.push((function(){
+            await callack();
+        EVT_STACK.push((async function(){
             if (root.innerWidth >= 768 && root.innerWidth < 992)
-                callack();
+                await callack();
         }));
     });
 
-    const on_lg_and_up = (function(callack) {
+    const on_lg_and_up = (async function(callack) {
         if (root.innerWidth >= 992 && root.innerWidth < 1200)
-            callack();
-        EVT_STACK.push((function(){
+            await callack();
+        EVT_STACK.push((async function(){
             if (root.innerWidth >= 992 && root.innerWidth < 1200)
-                callack();
+                await callack();
         }));
     });
 
     const on_xl_and_up = (function(callack) {
         if (root.innerWidth >= 1200 && root.innerWidth < 1400)
             callack();
-        EVT_STACK.push((function(){
+        EVT_STACK.push((async function(){
             if (root.innerWidth >= 1200 && root.innerWidth < 1400)
-                callack();
+                await callack();
         }));
     });
 
-    const on_xxl_and_up = (function(callack) {
+    const on_xxl_and_up = (async function(callack) {
         if (root.innerWidth >= 1400)
-            callack();
-        EVT_STACK.push((function(){
+            await callack();
+        EVT_STACK.push((async function(){
             if (root.innerWidth >= 1400)
-                callack();
+                await callack();
         }));
     });
 

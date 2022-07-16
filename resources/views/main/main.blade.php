@@ -29,7 +29,7 @@
                 </li>
                 <li class="nav-item">
                     <a href="#operation-page" class="nav-link">
-                        <i class="d-inline d-sm-none fa-solid fa-car-side"></i> <span class="d-none d-sm-inline small">{{ __("Operation") }}</span>
+                        <i class="d-inline d-sm-none fa-solid fa-car-side"></i> <span class="d-none d-sm-inline small">{{ __("Management") }}</span>
                     </a>
                 </li>
                 <li class="nav-item">
@@ -47,11 +47,26 @@
     </nav>
     <div id="main__content-area" class="container-fluid px-0 h-100" data-bs-spy="scroll" data-bs-target="#main__navbar">
         <x-dashboard id="dashboard-page"></x-dashboard>
-        <x-dashboard id="operation-page"></x-dashboard>
     </div>
 @stop
 
 {{-- js --}}
 @section("javascript")
+    {{-- chart js --}}
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"></script>
+    <script type="text/javascript" src="{{ asset("js/components/dashboard/dashboard-chart.js")}}"></script>
+    <script type="text/javascript" defer>
 
+        jQuery(() => init());
+
+        let init = (function() {
+            window.renderAnalyticChart(
+                "dashboard__analytics-chart",
+                ["January", "February", "March", "April", "May", "June", "July"], [
+                [12, 32, 100, 23, 56, 27, 90],
+                [122, 323, 10, 123, 36, 227, 100],
+            ]);
+        });
+
+    </script>
 @stop
