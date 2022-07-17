@@ -109,14 +109,16 @@
     const truncateMoney = (function(money) {
         let value = (Math.floor(money*100).toFixed(0)/100).toFixed(2);
         let mUnit =  "";
-        if (value > 1000)
+        if (value >= 1000)
             mUnit = "K"
-        else if (value > 1000000)
+        else if (value >= 1000000)
             mUnit = "M"
-        else if (value > 1000000000)
+        else if (value >= 1000000000)
             mUnit = "B"
-        else if (value > 1000000000000)
+        else if (value >= 1000000000000)
             mUnit = "T"
+        else if (value >= 100000000000000000n)
+            mUnit = "Q"
 
         return "₱" + value.toString() + mUnit;
     });
