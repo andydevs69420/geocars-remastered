@@ -87,6 +87,7 @@
             <div class="col-12 col-md-8">
                 {{-- TILE 0 --}}
                 <div class="d-block dashboard__tile-large my-2 shadow">
+                    <img class="img tile__bg-icon position-absolute" src="{{ asset("images/cloudy-day.webp") }}" alt="car-image">
                     <div class="tile__content-area position-absolute">
                         <canvas id="dashboard__analytics-chart"></canvas>
                     </div>

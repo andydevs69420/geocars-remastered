@@ -4,11 +4,11 @@
 
     jQuery(() => init());
 
-    let init = (function() {
+    const init = (function() {
         root.renderAnalyticChart = Object.freeze(renderAnalyticChart);
     });
 
-    let renderAnalyticChart = (function(container_selector, months=[], data_array=[]) {
+    const renderAnalyticChart = (function(container_selector, months=[], data_array=[]) {
         let ctx = document.getElementById(container_selector).getContext("2d");
 
         let gradient = ctx.createLinearGradient(0, 0, 0, 500);
@@ -23,44 +23,77 @@
             labels: months,
             datasets: [{
                 label: "CURRENT YEAR",
+                fill: true,
                 pointDot : false,
                 backgroundColor: gradient,
                 pointRadius: 5,
                 borderWidth: 2,
                 borderColor: "#FFFFFF",
-                data: (data_array.length > 0)? data_array[0] : data_array
+                tension: 0.4,
+                data: (data_array.length > 0)? data_array[0] : data_array,
             },
             {
                 label: "PREVIOUS YEAR",
+                fill: true,
                 pointDot : false,
                 backgroundColor: gradient2,
                 pointRadius: 5,
                 borderWidth: 2,
-                data: (data_array.length > 1)? data_array[1] : data_array
+                borderColor: "#EEEEFF",
+                tension: 0.4,
+                data: (data_array.length > 1)? data_array[1] : data_array,
             }]
         };
 
         let options = {
-            responsive:true,
+
+            responsive: true,
             maintainAspectRatio: false,
-            scales: {
-                xAxes: [{
-                    gridLines: {
-                        color: "rgba(0, 0, 0, 0)",
-                    }
-                }],
-                yAxes: [{
-                    gridLines: {
-                        color: "rgba(0, 0, 0, 0)",
-                    },
-                }]
-            },
-            legend:{
-                display: true,
-                labels: {
-                    usePointStyle: true,
+            layout: {
+                autoPadding: false,
+                padding: {
+                    left: -10,
+                    bottom: -10
                 }
-            }
+            },
+            plugins: {
+                legend: {
+                    labels: {
+                        usePointStyle: true,
+                    }
+                },
+                tooltip: {
+                    usePointStyle: true,
+                    yAlign: "bottom",
+                    callbacks: {
+                        label: function(ctx) {
+                            let label = ctx.dataset.label;
+                            if (label)
+                                label += ": ";
+                            if (ctx.parsed.y !== null)
+                                label += truncateMoney(ctx.parsed.y);
+                            return label;
+                        },
+                    }
+                }
+            },
+            scales: {
+                x: {
+                    grid: {display: false},
+                    ticks: {display: false}
+                },
+                y: {
+                    grid: {
+                        display: false,
+                        borderColor: "transparent",
+                    },
+                    ticks: {
+                        display: false,
+                        beginAtZero:true,
+                        min: -5,
+                    },
+                }
+            },
         };
 
         let config = ({
@@ -69,17 +102,23 @@
             options: options
         });
 
-        let myLineChart = new Chart(ctx, config);
+        let analyticChart = new Chart(ctx, config);
 
-        $(root).resize(function() {
-            setTimeout(function() {
-                config.type = ((root.innerWidth >= 0 && root.innerWidth < 576)? "bar" : "line");
-                // ctx.style.width  = "100%";
-                // ctx.style.height = "100%";
-                console.log(ctx);
-                myLineChart.update();
-            }, 250);
-        });
+    });
+
+    const truncateMoney = (function(money) {
+        let value = (Math.floor(money*100).toFixed(0)/100).toFixed(2);
+        let mUnit =  "";
+        if (value > 1000)
+            mUnit = "K"
+        else if (value > 1000000)
+            mUnit = "M"
+        else if (value > 1000000000)
+            mUnit = "B"
+        else if (value > 1000000000000)
+            mUnit = "T"
+
+        return "₱" + value.toString() + mUnit;
     });
 
 })(window);

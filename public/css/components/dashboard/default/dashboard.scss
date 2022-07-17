@@ -28,6 +28,7 @@
     width: 100%;
     background-color: $PRIMARY-LIGHT;
     border-radius: .75em;
+    overflow: hidden;
     @include on_sm_and_up
     {
         padding-top: 50%;
@@ -117,15 +118,32 @@
     left: 0;
     width: 100%;
     height: 100%;
-    // background-color: rgba(204, 10, 10, 0.678);
 }
 
 .dashboard__tile-large >
 .tile__bg-icon {
     position: absolute;
-    top: 50%;
+    top: 5%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translateX(-50%);
+    width: 25%;
+    @include on_sm_and_up
+    { width: 15%; }
+}
+
+.dashboard__tile-large::before {
+    content: ' ';
+    display: block;
+    position: absolute;
+    top: 13%;
+    left: 49.5%;
+    transform: translateX(-49.5%);
+    width: 35px;
+    height: 35px;
+    border-radius: 100%;
+    box-shadow: 0px 50px 200px 100px rgba(255, 166, 0, 0.3) !important;
+    @include on_sm_and_up
+    { top: 15.5%; }
 }
 
 
