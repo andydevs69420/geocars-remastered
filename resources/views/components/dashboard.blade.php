@@ -1,5 +1,4 @@
 
-
 <section id="{{ $attributes->get("id")?$attributes->get("id") : "dashboard-page"  }}" class="d-block w-100 h-100">
     <div class="container-lg">
         <div class="row">
@@ -87,14 +86,14 @@
             <div class="col-12 col-md-8">
                 {{-- TILE 0 --}}
                 <div class="d-block dashboard__tile-large my-2 shadow">
-                    <img class="img tile__bg-icon position-absolute" src="{{ asset("images/cloudy-day.webp") }}" alt="car-image">
                     <div class="tile__content-area position-absolute">
                         <canvas id="dashboard__analytics-chart"></canvas>
                     </div>
                 </div>
             </div>
             <div class="col-12 col-md-4">
-
+                {{-- TILE 1 --}}
+                <div class="d-block dashboard__tile-large my-2 shadow"></div>
             </div>
         </div>
     </div>

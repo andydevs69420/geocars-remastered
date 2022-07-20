@@ -13,6 +13,7 @@
     padding-top: 100%;
     width: 100%;
     border-radius: .75em;
+    background-color: rgb(32, 19, 19) !important;
     @include on_sm_and_up
     {
         padding-top: 50%;
@@ -26,7 +27,7 @@
     position: relative;
     padding-top: 100%;
     width: 100%;
-    background-color: $PRIMARY-LIGHT;
+    background-color: rgb(32, 19, 19) !important;
     border-radius: .75em;
     overflow: hidden;
     @include on_sm_and_up
@@ -141,7 +142,7 @@
     width: 60px;
     height: 60px;
     border-radius: 100%;
-    background-color: $PRIMARY-LIGHT;
+    background-color: $PRIMARY-DARK;
 }
 
 #dashboard_center-button-1 >

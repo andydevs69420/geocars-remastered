@@ -1,0 +1,62 @@
+@import "../../global/sizing";
+@import "../../global/themerc";
+
+
+#main__navbar {
+    background-color: rgb(32, 19, 19) !important;
+}
+
+nav {
+    position: fixed !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    left: 0 !important;
+    z-index: 1030 !important;
+    // padding-top: 0.5rem !important;
+    box-shadow: 0 15px 0.5rem 1rem rgb(0 0 0 / 15%) !important;
+    @include on_sm_and_up
+    {
+        top: 0 !important;
+        bottom: initial !important;
+        box-shadow: 0 0.125rem 0.25rem rgb(0 0 0 / 8%) !important;
+    }
+}
+
+.nav-link
+{ color: $PRIMARY-LIGHT !important; }
+
+.nav-link.active {
+    color: rgb(3, 110, 253) !important;
+    @include on_sm_and_up
+    { color: $PRIMARY-LIGHT !important; }
+    &::after {
+        display: block;
+        content: ' ';
+        width: 100%;
+        height: 3px;
+        margin: auto;
+        border-radius: 0px;
+        border-bottom: 0.25rem solid rgb(155, 113, 255) !important;
+        @include on_sm_and_up
+        {
+            width: 20%;
+            border-radius: 10px;
+        }
+    }
+}
+
+#main__link-list {
+    width: 100%;
+    @include on_sm_and_up
+    { width: auto; }
+}
+
+#main__content-area {
+    padding-bottom: 60px;
+    overflow-y: hidden !important;
+    @include on_sm_and_up
+    {
+        padding-top: 60px;
+        padding-bottom: initial;
+    }
+}

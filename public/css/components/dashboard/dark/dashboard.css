@@ -9,6 +9,7 @@
   padding-top: 100%;
   width: 100%;
   border-radius: 0.75em;
+  background-color: rgb(32, 19, 19) !important;
 }
 @media screen and (min-width: 576px) {
   .dashboard__tile-small {
@@ -26,7 +27,7 @@
   position: relative;
   padding-top: 100%;
   width: 100%;
-  background-color: rgb(252, 248, 248);
+  background-color: rgb(32, 19, 19) !important;
   border-radius: 0.75em;
   overflow: hidden;
 }
@@ -195,7 +196,7 @@
   width: 60px;
   height: 60px;
   border-radius: 100%;
-  background-color: rgb(252, 248, 248);
+  background-color: rgb(20, 13, 13);
 }
 
 #dashboard_center-button-1 > #dashboard__center-button-icon {

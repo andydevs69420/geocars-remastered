@@ -1,13 +1,13 @@
 @extends("layout.master")
 
-@section("page-title", "GEOCARS | app")
+@section("page-title", "GEOCARS | geocarsapp")
 
 {{-- css --}}
 @section("stylesheet")
     {{-- page styling css --}}
-    <link rel="stylesheet" href="{{ variant(asset("css/main/default/main.css"), asset("css/main/default/main.css")) }}">
+    <link rel="stylesheet" href="{{ variant(asset("css/main/default/main.css"), asset("css/main/dark/main.css")) }}">
     {{-- dashboard styling css --}}
-    <link rel="stylesheet" href="{{ variant(asset("css/components/dashboard/default/dashboard.css"), asset("css/main/default/main.css")) }}">
+    <link rel="stylesheet" href="{{ variant(asset("css/components/dashboard/default/dashboard.css"), asset("css/components/dashboard/dark/dashboard.css")) }}">
     {{-- variant selector css --}}
     <link rel="stylesheet" href="{{ asset("css/components/local-variant-selector/local-variant-selector.css") }}">
 @stop
@@ -18,7 +18,7 @@
         <div class="container-fluid">
 
             <a href="{{ url("/geocarsapp") }}" class="d-none d-sm-inline-block position-absolute navbar-brand">
-                <img class="rounded-circle shadow-sm" src="{{ asset("images/geocarsapp.png") }}" alt="geocars-brand" width="40px">
+                <img class="shadow-sm" src="{{ asset("images/geocarsapp-rounded.png") }}" alt="geocars-branding" width="35px">
             </a>
 
             <ul id="main__link-list" class="navbar-nav flex-row justify-content-around mx-auto">
