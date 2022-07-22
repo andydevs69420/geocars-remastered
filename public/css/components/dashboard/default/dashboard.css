@@ -26,6 +26,7 @@
   position: relative;
   padding-top: 100%;
   width: 100%;
+  min-height: calc(100% - 1rem) !important;
   background-color: rgb(252, 248, 248);
   border-radius: 0.75em;
   overflow: hidden;
@@ -174,9 +175,9 @@
 
 .dashboard__tile-large > .tile__bg-icon {
   position: absolute;
-  top: 5%;
+  top: 45%;
   left: 50%;
-  transform: translateX(-50%);
+  transform: translate(-50%, -45%);
   width: 25%;
 }
 @media screen and (min-width: 576px) {

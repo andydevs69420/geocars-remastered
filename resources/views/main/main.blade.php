@@ -64,6 +64,11 @@
                 [12, 32, 100, 23, 56, 27, 90],
                 [122, 323, 10, 123, 36, 227, 100],
             ]);
+            window.renderSubscriptionChart(
+                "dashboard__subscription-chart",
+                ["used", "remaining"],
+                [300, 140]
+            );
         });
 
     </script>

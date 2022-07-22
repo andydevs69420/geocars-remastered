@@ -1,11 +1,11 @@
 
-
 (function(root){
 
     jQuery(() => init());
 
     const init = (function() {
         root.renderAnalyticChart = Object.freeze(renderAnalyticChart);
+        root.renderSubscriptionChart = Object.freeze(renderSubscriptionChart);
     });
 
     const renderAnalyticChart = (function(container_selector, months=[], data_array=[]) {
@@ -69,7 +69,7 @@
                         label: function(ctx) {
                             let label = ctx.dataset.label;
                             if (label)
-                                label += ": ";
+                                label = " " + label + ": ";
                             if (ctx.parsed.y !== null)
                                 label += truncateMoney(ctx.parsed.y);
                             return label;
@@ -97,13 +97,65 @@
         };
 
         let config = ({
-            type: ((root.innerWidth >= 0 && root.innerWidth < 576)? "bar" : "line"),
+            type: "line",
             data: data,
             options: options
         });
 
         let analyticChart = new Chart(ctx, config);
 
+    });
+
+
+    const renderSubscriptionChart = (function(container_selector, _label=["consumed", "remaining"], _data=[50, 60]) {
+        let ctx = document.getElementById(container_selector).getContext("2d");
+        let data = {
+            labels: _label,
+            datasets: [{
+                label: "Plan usage",
+                data: _data,
+                borderColor: "transparent",
+                backgroundColor: [
+                    "rgb(47, 214, 209)",
+                    "rgb(38, 87, 201)",
+                ]
+            }]
+        };
+        let options = {
+            responsive: true,
+            maintainAspectRatio: false,
+            cutout: "80%",
+            plugins: {
+                legend: {
+                    display: true,
+                    position: "bottom",
+                    labels: {
+                        pointStyle: "circle",
+                        usePointStyle: true,
+                    }
+                },
+                tooltip: {
+                    usePointStyle: true,
+                    yAlign: "bottom",
+                    callbacks: {
+                        label: function(ctx) {
+                            let label = ctx.dataset.label;
+                            if (label)
+                                label = " " + label + ": ";
+                            if (ctx.parsed.y !== null)
+                                label += ctx.parsed + "%";
+                            return label;
+                        },
+                    }
+                }
+            },
+        };
+        let config = ({
+            type: "doughnut",
+            data: data,
+            options: options
+        });
+        let subscriptionChart = new Chart(ctx, config);
     });
 
     const truncateMoney = (function(money) {
