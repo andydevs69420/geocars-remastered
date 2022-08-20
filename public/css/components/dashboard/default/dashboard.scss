@@ -2,10 +2,13 @@
 @import "../../../global/themerc";
 
 
+$dashboard-bg: #f0e7e6;
+
 #dashboard-page {
     padding-top: 0.75rem;
     padding-bottom: 0.75rem;
     overflow-y: auto;
+    background-color: $dashboard-bg !important;
 }
 
 .dashboard__tile-small {
@@ -30,13 +33,11 @@
     background-color: $PRIMARY-LIGHT;
     border-radius: .75em;
     overflow: hidden;
-    @include on_sm_and_up
+    @include on_md_and_up
     {
         padding-top: 50%;
         border-radius: .25em;
     }
-    @include on_md_and_up
-    { padding-top: 47%; }
 }
 
 .dashboard__tile-small >
@@ -134,6 +135,8 @@
 
 #dashboard__tile-center {
     border-radius: .75em;
+    @include on_sm_and_up
+    { border-radius: .25em; }
 }
 
 #dashboard_center-button-1 {
@@ -142,7 +145,7 @@
     width: 60px;
     height: 60px;
     border-radius: 100%;
-    background-color: $PRIMARY-LIGHT;
+    background-color: $dashboard-bg;
 }
 
 #dashboard_center-button-1 >

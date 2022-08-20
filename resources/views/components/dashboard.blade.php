@@ -94,8 +94,7 @@
             <div class="col-12 col-md-4">
                 {{-- TILE 1 --}}
                 <div class="d-block dashboard__tile-large my-2 shadow">
-                    <i class="tile__bg-icon position-absolute fa-solid fa-rocket fa-3x text-primary"></i>
-                    <div class="tile__content-area position-absolute p-5">
+                    <div class="tile__content-area position-absolute p-5 p-sm-2 p-md-4">
                         <canvas id="dashboard__subscription-chart"></canvas>
                     </div>
                 </div>

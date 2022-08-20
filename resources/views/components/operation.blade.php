@@ -1,3 +1,5 @@
-<div>
-    <!-- Simplicity is the ultimate sophistication. - Leonardo da Vinci -->
-</div>
+<section id="{{ $attributes->get("id")?$attributes->get("id") : "operation-page"  }}" class="d-block w-100 h-100">
+
+
+
+</section>

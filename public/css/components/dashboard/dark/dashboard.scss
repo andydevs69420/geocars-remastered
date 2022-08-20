@@ -30,14 +30,11 @@
     min-height: calc(100% - 1rem) !important;
     background-color: rgb(32, 19, 19) !important;
     border-radius: .75em;
-    @include on_sm_and_up
+    overflow: hidden;
+    @include on_md_and_up
     {
         padding-top: 50%;
         border-radius: .25em;
-    }
-    @include on_md_and_up
-    {
-        padding-top: 47%;
     }
 }
 
@@ -133,8 +130,9 @@
 
 #dashboard__tile-center {
     border-radius: .75em;
+    @include on_sm_and_up
+    { border-radius: .25em; }
 }
-
 #dashboard_center-button-1 {
     z-index: 1;
     margin-top: -59px;

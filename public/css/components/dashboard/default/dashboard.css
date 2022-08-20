@@ -2,6 +2,7 @@
   padding-top: 0.75rem;
   padding-bottom: 0.75rem;
   overflow-y: auto;
+  background-color: #f0e7e6 !important;
 }
 
 .dashboard__tile-small {
@@ -31,15 +32,10 @@
   border-radius: 0.75em;
   overflow: hidden;
 }
-@media screen and (min-width: 576px) {
+@media screen and (min-width: 768px) {
   .dashboard__tile-large {
     padding-top: 50%;
     border-radius: 0.25em;
-  }
-}
-@media screen and (min-width: 768px) {
-  .dashboard__tile-large {
-    padding-top: 47%;
   }
 }
 
@@ -189,6 +185,11 @@
 #dashboard__tile-center {
   border-radius: 0.75em;
 }
+@media screen and (min-width: 576px) {
+  #dashboard__tile-center {
+    border-radius: 0.25em;
+  }
+}
 
 #dashboard_center-button-1 {
   z-index: 1;
@@ -196,7 +197,7 @@
   width: 60px;
   height: 60px;
   border-radius: 100%;
-  background-color: rgb(252, 248, 248);
+  background-color: #f0e7e6;
 }
 
 #dashboard_center-button-1 > #dashboard__center-button-icon {
