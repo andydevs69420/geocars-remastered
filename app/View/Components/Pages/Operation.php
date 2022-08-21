@@ -1,10 +1,10 @@
 <?php
 
-namespace App\View\Components;
+namespace App\View\Components\Pages;
 
 use Illuminate\View\Component;
 
-class operation extends Component
+class Operation extends Component
 {
     /**
      * Create a new component instance.
@@ -23,6 +23,6 @@ class operation extends Component
      */
     public function render()
     {
-        return view('components.operation');
+        return view('components.pages.operation');
     }
 }

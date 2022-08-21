@@ -68,10 +68,10 @@
 
             <div id="main__section-wrapper" class="container-fluid px-0" data-bs-spy="scroll" data-bs-target="#main__navbar" data-bs-offset="100">
 
-                <x-dashboard  id="dashboard-page" ></x-dashboard>
-                <x-management id="management-page"></x-management>
-                <x-operation  id="operation-page" ></x-operation>
-                <x-account    id="account-page"   ></x-account>
+                <x-pages.dashboard  id="dashboard-page" ></x-dashboard>
+                <x-pages.management id="management-page"></x-management>
+                <x-pages.operation  id="operation-page" ></x-operation>
+                <x-pages.account    id="account-page"   ></x-account>
 
             </div>
 

@@ -97,7 +97,7 @@
                 </div>
             </form>
         </div>
-        <x-local-variant-selector></x-local-variant-selector>
+        <x-global.local-variant-selector></x-global.local-variant-selector>
     </div>
 
 @stop

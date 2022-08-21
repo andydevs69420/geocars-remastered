@@ -5,23 +5,6 @@
 
     const init = (function() {
 
-        window.on_xs_and_up(() => {
-
-            $(".input-group")
-                .addClass("rounded-pill");
-            $(".register__btn-register-wrapper")
-                .addClass("rounded-pill");
-
-        });
-
-
-        window.on_sm_and_up(() => {
-            $(".input-group")
-                .removeClass("rounded-pill");
-            $(".register__btn-register-wrapper")
-                .removeClass("rounded-pill");
-        });
-
         $("#register__next-btn")
         .click(function(evt) {
             window.location.href = "#register_page-2";

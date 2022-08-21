@@ -1,6 +1,6 @@
 <?php
 
-namespace App\View\Components;
+namespace App\View\Components\Global;
 
 use Illuminate\View\Component;
 use Cookie;
@@ -10,8 +10,8 @@ class LocalVariantSelector extends Component
     /**
      * Checks fo current variant
      * @param String variant light|dark
-     * @return String 
-     **/ 
+     * @return String
+     **/
     public function is_vactive(String $variant) {
         return (strcmp(Cookie::get("variant"), $variant) === 0)? "v-active" : "v-inactive";
     }
@@ -22,6 +22,6 @@ class LocalVariantSelector extends Component
      **/
     public function render()
     {
-        return view('components.local-variant-selector');
+        return view('components.global.local-variant-selector');
     }
 }

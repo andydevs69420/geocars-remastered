@@ -1,14 +1,14 @@
 <?php
 
-namespace App\View\Components;
+namespace App\View\Components\Pages;
 
 use Illuminate\View\Component;
 
-class account extends Component
+class Dashboard extends Component
 {
+    private String $id;
     /**
      * Create a new component instance.
-     *
      * @return void
      */
     public function __construct()
@@ -23,6 +23,6 @@ class account extends Component
      */
     public function render()
     {
-        return view('components.account');
+        return view('components.pages.dashboard');
     }
 }

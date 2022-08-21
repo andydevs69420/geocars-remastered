@@ -1,10 +1,10 @@
 <?php
 
-namespace App\View\Components;
+namespace App\View\Components\Pages;
 
 use Illuminate\View\Component;
 
-class management extends Component
+class Management extends Component
 {
     /**
      * Create a new component instance.
@@ -23,6 +23,6 @@ class management extends Component
      */
     public function render()
     {
-        return view('components.management');
+        return view('components.pages.management');
     }
 }

@@ -98,7 +98,7 @@
                                         </div>
                                     </div>
                                     <div class="col-12 mt-2 d-block d-sm-none">
-                                        <span class="register__btn-register-wrapper d-block rounded-pill mx-auto shadow">
+                                        <span class="register__btn-register-wrapper d-block rounded mx-auto shadow">
                                             <button id="register__next-btn" class="btn btn-primary w-100" type="button">
                                                 {{ __("NEXT STEP") }}
                                             </button>
@@ -164,7 +164,7 @@
             </form>
 
         </div>
-        <x-local-variant-selector></x-local-variant-selector>
+        <x-global.local-variant-selector></x-global.local-variant-selector>
     </div>
 
 @stop
