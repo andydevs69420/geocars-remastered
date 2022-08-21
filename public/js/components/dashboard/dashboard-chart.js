@@ -107,51 +107,83 @@
     });
 
 
-    const renderSubscriptionChart = (function(container_selector, _label=["consumed", "remaining"], _data=[50, 60]) {
+    const renderSubscriptionChart = (function(container_selector, _title="Chart", _label=["consumed", "remaining"], _data=[50, 60]) {
         let ctx = document.getElementById(container_selector).getContext("2d");
         let data = {
-            labels: _label,
-            datasets: [{
-                label: "Plan usage",
-                data: _data,
-                borderColor: "transparent",
-                backgroundColor: [
-                    "rgb(47, 214, 209)",
-                    "rgb(38, 87, 201)",
-                ]
-            }]
+            labels: [_title],
+            datasets: [
+                {
+                    label: _label[0],
+                    data: [_data[0]],
+                    borderColor: "transparent",
+                    borderSkipped: false,
+                    backgroundColor: "rgb(245, 141, 66)",
+                    barPercentage: 0.25,
+                    categoryPercentage: 0.25
+                },
+                {
+                    label: _label[1],
+                    data: [_data[1]],
+                    borderColor: "transparent",
+                    borderSkipped: false,
+                    backgroundColor:"rgb(47, 214, 209)",
+                    barPercentage: 0.25,
+                    categoryPercentage: 0.25
+                },
+            ],
         };
         let options = {
             responsive: true,
-            maintainAspectRatio: true,
-            cutout: "80%",
+            maintainAspectRatio: false,
+            indexAxis: "y",
             plugins: {
                 legend: {
                     display: true,
                     position: "bottom",
+                    align: "start",
                     labels: {
                         pointStyle: "circle",
                         usePointStyle: true,
+                        fontStyle: "bold",
+                        color: "#ffffff",
                     }
                 },
                 tooltip: {
                     usePointStyle: true,
                     yAlign: "bottom",
-                    callbacks: {
-                        label: function(ctx) {
-                            let label = ctx.dataset.label;
-                            if (label)
-                                label = " " + label + ": ";
-                            if (ctx.parsed.y !== null)
-                                label += ctx.parsed + "%";
-                            return label;
-                        },
-                    }
+                }
+            },
+            scales: {
+                x: {
+                    stacked: true,
+                    grid: {
+                        display: false,
+                        borderColor: "transparent"
+                    },
+                    ticks: {display: false}
+                },
+                y: {
+                    stacked: true,
+                    grid: {
+                        display: false,
+                        borderColor: "transparent",
+                    },
+                    ticks: {
+                        display: true,
+                        mirror: true,
+                        beginAtZero:true,
+                        labelOffset: -22,
+                        color: "#ffffff",
+                        font: {
+                            size: 16,
+                            weight: "bold",
+                        }
+                    },
                 }
             },
         };
         let config = ({
-            type: "doughnut",
+            type: "bar",
             data: data,
             options: options
         });

@@ -1,10 +1,11 @@
 * {
   margin: 0;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 html {
-  background-color: rgb(252, 248, 248);
+  background-color: #fcf8f8;
 }
 
 body {
@@ -15,21 +16,25 @@ body {
   overflow: hidden auto;
   background-color: inherit;
 }
+
 @media screen and (min-width: 768px) {
   body {
     min-width: 768px;
   }
 }
+
 @media screen and (min-width: 992px) {
   body {
     min-width: 992px;
   }
 }
+
 @media screen and (min-width: 1200px) {
   body {
     min-width: 1200px;
   }
 }
+
 @media screen and (min-width: 1400px) {
   body {
     min-width: 1400px;
@@ -39,4 +44,5 @@ body {
 #master__main {
   position: relative !important;
   overflow: hidden auto !important;
-}/*# sourceMappingURL=master.css.map */
+}
+/*# sourceMappingURL=master.css.map */

@@ -83,15 +83,54 @@
         </div>
 
         <div class="row my-2">
-            <div class="col-12 col-md-8">
+            <div class="col-12 col-xl-8">
                 {{-- TILE 0 --}}
-                <div class="d-block dashboard__tile-large my-2 shadow">
+                {{-- <div class="d-block dashboard__tile-large my-2 shadow">
                     <div class="tile__content-area position-absolute">
                         <canvas id="dashboard__analytics-chart"></canvas>
                     </div>
+                </div> --}}
+
+                <div class="container-fluid px-0">
+                    <div class="row">
+
+                        <div class="col-12">
+                            {{-- TILE 0 --}}
+                            <div class="d-block dashboard__tile-vertical my-2 shadow">
+                                <div class="tile__content-area position-absolute">
+                                    <canvas id="dashboard__analytics-chart"></canvas>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-12">
+                            <div class="container-fluid px-0">
+                                <div class="row">
+                                    <div class="col-12 col-md-6">
+                                        {{-- TILE 1 --}}
+                                        <div class="d-block dashboard__tile-vertical tile-vertical-child vtile-0 my-2 shadow">
+                                            <div class="tile__content-area position-absolute px-3">
+                                                <canvas id="dashboard__subscription-chart"></canvas>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-md-6">
+                                        {{-- TILE 1 --}}
+                                        <div class="d-block dashboard__tile-vertical tile-vertical-child my-2 shadow">
+                                            <div class="tile__content-area position-absolute px-3">
+                                                <canvas id="dashboard__subscription-chart"></canvas>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
                 </div>
+
             </div>
-            <div class="col-12 col-md-4">
+            <div class="col-12 col-xl-4">
                 {{-- TILE 1 --}}
                 <div class="d-block dashboard__tile-large my-2 shadow">
                     <div class="tile__content-area position-absolute p-5 p-sm-2 p-md-4">
@@ -102,4 +141,3 @@
         </div>
     </div>
 </section>
-

@@ -96,6 +96,7 @@
             ]);
             window.renderSubscriptionChart(
                 "dashboard__subscription-chart",
+                "Plan usage",
                 ["used        ", "remaining"],
                 [300, 140]
             );

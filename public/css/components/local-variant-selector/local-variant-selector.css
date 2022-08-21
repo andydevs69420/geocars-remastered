@@ -4,6 +4,7 @@
   bottom: 10px;
   z-index: 3;
 }
+
 @media screen and (min-width: 768px) {
   .local-variant-selector__wrapper {
     right: 15px;
@@ -19,23 +20,26 @@
 }
 
 .variant.v-active {
-  border: 3px solid rgb(83, 83, 240);
+  border: 3px solid #5353f0;
 }
 
 .variant.v-inactive {
-  border: 3px solid rgb(196, 196, 204);
+  border: 3px solid #c4c4cc;
 }
 
-#variant__light > span[role=button] {
+#variant__light >
+span[role="button"] {
   width: 72%;
   height: 72%;
   border-radius: inherit;
-  background-color: rgb(252, 248, 248);
+  background-color: #fcf8f8;
 }
 
-#variant__dark > span[role=button] {
+#variant__dark >
+span[role="button"] {
   width: 72%;
   height: 72%;
   border-radius: inherit;
-  background-color: rgb(20, 13, 13);
-}/*# sourceMappingURL=local-variant-selector.css.map */
+  background-color: #140d0d;
+}
+/*# sourceMappingURL=local-variant-selector.css.map */
