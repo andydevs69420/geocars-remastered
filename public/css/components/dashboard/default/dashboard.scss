@@ -33,6 +33,9 @@ $dashboard-bg: #f0e7e6;
     background-color: $PRIMARY-LIGHT;
     border-radius: .75em;
     overflow: hidden;
+
+    @include on_md_and_up
+    { border-radius: .25em; }
 }
 
 
@@ -60,12 +63,12 @@ $dashboard-bg: #f0e7e6;
         border-radius: .25em;
     }
 }
+
 $fade-bg-0: rgb(13, 110, 253);
 $fade-bg-1: rgb(238, 67, 76);
-.tile-vertical-child.vtile-0
-{
-    background: linear-gradient(45deg, $fade-bg-0, $fade-bg-1) !important;
-}
+.tile-vertical-child.vtile
+{ background: linear-gradient(45deg, $fade-bg-0, $fade-bg-1) !important; }
+
 
 .dashboard__tile-small >
 .tile__content-area {

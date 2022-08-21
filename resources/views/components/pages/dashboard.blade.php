@@ -85,12 +85,6 @@
         <div class="row my-2">
             <div class="col-12 col-xl-8">
                 {{-- TILE 0 --}}
-                {{-- <div class="d-block dashboard__tile-large my-2 shadow">
-                    <div class="tile__content-area position-absolute">
-                        <canvas id="dashboard__analytics-chart"></canvas>
-                    </div>
-                </div> --}}
-
                 <div class="container-fluid px-0">
                     <div class="row">
 
@@ -100,6 +94,13 @@
                                 <div class="tile__content-area position-absolute">
                                     <canvas id="dashboard__analytics-chart"></canvas>
                                 </div>
+                                <span class="position-absolute top-0 end-0 me-1 right-0"
+                                    tabindex="0"
+                                    data-bs-toggle="tooltip"
+                                    data-bs-placement="top"
+                                    data-bs-title="Your current last 5 months vs previous year's last 5 months profit.">
+                                    <i class="fa-solid fa-question-circle text-muted text-opacity-25"></i>
+                                </span>
                             </div>
                         </div>
 
@@ -108,18 +109,36 @@
                                 <div class="row">
                                     <div class="col-12 col-md-6">
                                         {{-- TILE 1 --}}
-                                        <div class="d-block dashboard__tile-vertical tile-vertical-child vtile-0 my-2 shadow">
+                                        <div class="d-block dashboard__tile-vertical tile-vertical-child vtile my-2 shadow">
+
                                             <div class="tile__content-area position-absolute px-3">
                                                 <canvas id="dashboard__subscription-chart"></canvas>
                                             </div>
+
+                                            <span class="position-absolute top-0 end-0 me-1 right-0"
+                                                tabindex="0"
+                                                data-bs-toggle="tooltip"
+                                                data-bs-placement="top"
+                                                data-bs-title="Your current plan usage.">
+                                                <i class="fa-solid fa-question-circle text-muted text-opacity-25"></i>
+                                            </span>
+
                                         </div>
                                     </div>
                                     <div class="col-12 col-md-6">
                                         {{-- TILE 1 --}}
-                                        <div class="d-block dashboard__tile-vertical tile-vertical-child my-2 shadow">
+                                        <div class="d-block dashboard__tile-vertical tile-vertical-child vtile my-2 shadow">
                                             <div class="tile__content-area position-absolute px-3">
-                                                <canvas id="dashboard__subscription-chart"></canvas>
+                                                <canvas id="dashboard__car-tally-chart"></canvas>
                                             </div>
+
+                                            <span class="position-absolute top-0 end-0 me-1 right-0"
+                                                tabindex="0"
+                                                data-bs-toggle="tooltip"
+                                                data-bs-placement="top"
+                                                data-bs-title="Available cars tally.">
+                                                <i class="fa-solid fa-question-circle text-muted text-opacity-25"></i>
+                                            </span>
                                         </div>
                                     </div>
                                 </div>
@@ -133,8 +152,8 @@
             <div class="col-12 col-xl-4">
                 {{-- TILE 1 --}}
                 <div class="d-block dashboard__tile-large my-2 shadow">
-                    <div class="tile__content-area position-absolute p-5 p-sm-2 p-md-4">
-                        <canvas id="dashboard__subscription-chart"></canvas>
+                    <div class="tile__content-area position-absolute p-0">
+                        <x-dashboard.dashboard-user-tile></x-dashboard.dashboard-user-tile>
                     </div>
                 </div>
             </div>

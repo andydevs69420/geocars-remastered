@@ -35,6 +35,12 @@
   overflow: hidden;
 }
 
+@media screen and (min-width: 768px) {
+  .dashboard__tile-large {
+    border-radius: .25em;
+  }
+}
+
 .dashboard__tile-vertical {
   position: relative;
   padding-top: 100%;
@@ -62,7 +68,7 @@
   }
 }
 
-.tile-vertical-child.vtile-0 {
+.tile-vertical-child.vtile {
   background: linear-gradient(45deg, #0d6efd, #ee434c) !important;
 }
 

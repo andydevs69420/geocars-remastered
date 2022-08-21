@@ -94,6 +94,7 @@
                 [12, 32, 100, 23, 56, 27, 90],
                 [122, 323, 10, 123, 36, 227, 100],
             ]);
+
             window.renderSubscriptionChart(
                 "dashboard__subscription-chart",
                 "Plan usage",
@@ -101,14 +102,25 @@
                 [300, 140]
             );
 
+            window.renderSubscriptionChart(
+                "dashboard__car-tally-chart",
+                "Vehicle availability",
+                ["used        ", "remaining"],
+                [300, 140]
+            );
 
-            $(window).resize(() => refreshScrollSpy());
+            $("[data-bs-spy='scroll']")
+                .scrollspy("refresh");
+            $("[data-bs-toggle='tooltip']")
+                .tooltip();
+
+            $(window).resize(() => refresh());
 
         });
 
-
-        const refreshScrollSpy = function() {
+        const refresh = function() {
             $("[data-bs-spy='scroll']").scrollspy("refresh");
+            $("[data-bs-toggle='tooltip']").tooltip("refresh");
         }
 
     </script>
