@@ -13,7 +13,7 @@
 ### A car rental tracking app
 
 
-## TODO :note:
+## TODO
 - [x] LOGIN
 - [x] SIGNUP
 - [x] DASHBOARD
