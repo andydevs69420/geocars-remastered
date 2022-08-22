@@ -10,7 +10,7 @@
 # GEOCARS APP
 
 ## DESCRIPTION :fire:
-### A car rental tracking app
+A car rental tracking app
 
 
 ## TODO
