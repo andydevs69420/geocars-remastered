@@ -162,6 +162,10 @@ i.fa-solid
     height: 100%;
 
     overflow-y: hidden;
+    scroll-snap-type: y mandatory !important;
+
+    & > section
+    { scroll-snap-align: start !important; }
 
     @include on_md_and_up
     { height: calc(100% - 56px) !important; }

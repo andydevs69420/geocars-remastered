@@ -10,11 +10,12 @@
 # GEOCARS APP
 
 ## DESCRIPTION :fire:
-A car rental tracking app
+Geographically located car is a car rental app itended for tracking cars.
 
 
 ## TODO
 - [x] LOGIN
 - [x] SIGNUP
 - [x] DASHBOARD
+- [x] MANAGEMENT
 

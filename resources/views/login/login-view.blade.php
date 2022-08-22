@@ -7,7 +7,7 @@
     {{-- page styling css --}}
     <link rel="stylesheet" href="{{ variant(asset("css/login/default/login.css"), asset("css/login/dark/login.css")) }}">
     {{-- variant selector css --}}
-    <link rel="stylesheet" href="{{ asset("css/components/local-variant-selector/local-variant-selector.css") }}">
+    <link rel="stylesheet" href="{{ asset("css/components/global/local-variant-selector/local-variant-selector.css") }}">
 @stop
 
 

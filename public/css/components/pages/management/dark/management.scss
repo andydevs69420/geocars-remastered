@@ -1,0 +1,30 @@
+@import "../../../../global/sizing";
+@import "../../../../global/themerc";
+
+$bg-dark:  rgb(32, 19, 19);
+
+#management-page {
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+    overflow-y: auto;
+}
+
+
+#management__control-panel
+{ background-color: $bg-dark !important; }
+
+
+#management__car-list
+{ background-color: $bg-dark !important; }
+
+.management__card-tile
+{
+    transition: box-shadow .6s ease-in-out !important;
+    background-color: $PRIMARY-DARK !important; }
+
+.management__card-tile:hover
+{
+    box-shadow: 0px 20px 20px -3px rgba(0,0,0,0.3) !important;
+    transition: box-shadow .2s ease-in-out !important;
+}
+

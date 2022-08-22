@@ -1,5 +1,5 @@
-@import "../../../global/sizing";
-@import "../../../global/themerc";
+@import "../../../../global/sizing";
+@import "../../../../global/themerc";
 
 $bg-dark:  rgb(32, 19, 19);
 
@@ -25,28 +25,28 @@ $bg-dark:  rgb(32, 19, 19);
     { padding-top: 100%; }
 }
 
-.dashboard__tile-large {
+.dashboard__tile-large
+{
     width: 100%;
     height: auto;
     background-color: $bg-dark;
     border-radius: .75em;
     overflow: hidden;
 
-    @include on_md_and_up
+    @include on_xl_and_up
     {
         position: relative;
         padding-top: 100%;
-        min-height: calc(100% - 1rem) !important;
         border-radius: .25em;
     }
-}
 
+}
 
 .dashboard__tile-vertical {
     position: relative;
     padding-top: 100%;
     width: 100%;
-    background-color: $bg-dark !important;
+    background-color: $bg-dark;
     border-radius: .75em;
     overflow: hidden;
 
@@ -59,13 +59,10 @@ $bg-dark:  rgb(32, 19, 19);
 
 .dashboard__tile-vertical.tile-vertical-child
 {
-    padding-top: 50%;
+    padding-top: calc(50% - .25rem);
 
     @include on_md_and_up
-    {
-        padding-top: 50%;
-        border-radius: .25em;
-    }
+    { border-radius: .25em; }
 }
 
 $fade-bg-0: rgba(50, 102, 180, 0.555);
@@ -151,11 +148,12 @@ $fade-bg-1: rgba(238, 67, 76, 0.4);
 
 .dashboard__tile-large >
 .tile__content-area {
+
     width: 100%;
     height: auto;
 
 
-    @include on_md_and_up
+    @include on_xl_and_up
     {
         position: absolute !important;
         top: 0;

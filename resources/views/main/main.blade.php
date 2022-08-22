@@ -7,9 +7,11 @@
     {{-- page styling css --}}
     <link rel="stylesheet" href="{{ variant(asset("css/main/default/main.css"), asset("css/main/dark/main.css")) }}">
     {{-- dashboard styling css --}}
-    <link rel="stylesheet" href="{{ variant(asset("css/components/dashboard/default/dashboard.css"), asset("css/components/dashboard/dark/dashboard.css")) }}">
+    <link rel="stylesheet" href="{{ variant(asset("css/components/pages/dashboard/default/dashboard.css"), asset("css/components/pages/dashboard/dark/dashboard.css")) }}">
+    {{-- management styling css --}}
+    <link rel="stylesheet" href="{{ variant(asset("css/components/pages/management/default/management.css"), asset("css/components/pages/management/dark/management.css")) }}">
     {{-- variant selector css --}}
-    <link rel="stylesheet" href="{{ asset("css/components/local-variant-selector/local-variant-selector.css") }}">
+    <link rel="stylesheet" href="{{ asset("css/components/global/local-variant-selector/local-variant-selector.css") }}">
 @stop
 
 {{-- body --}}
@@ -66,7 +68,7 @@
                 </div>
             </nav>
 
-            <div id="main__section-wrapper" class="container-fluid px-0" data-bs-spy="scroll" data-bs-target="#main__navbar" data-bs-offset="100">
+            <div id="main__section-wrapper" class="container-fluid px-0">
 
                 <x-pages.dashboard  id="dashboard-page" ></x-dashboard>
                 <x-pages.management id="management-page"></x-management>
@@ -81,46 +83,9 @@
 
 {{-- js --}}
 @section("javascript")
+    {{-- Dashboard JS --}}
     <script type="text/javascript" src="{{ asset("js/components/dashboard/dashboard-chart.js")}}"></script>
-    <script type="text/javascript" defer>
 
-
-        jQuery(() => init());
-
-        const init = (function() {
-            window.renderAnalyticChart(
-                "dashboard__analytics-chart",
-                ["January", "February", "March", "April", "May", "June", "July"], [
-                [12, 32, 100, 23, 56, 27, 90],
-                [122, 323, 10, 123, 36, 227, 100],
-            ]);
-
-            window.renderSubscriptionChart(
-                "dashboard__subscription-chart",
-                "Plan usage",
-                ["used        ", "remaining"],
-                [300, 140]
-            );
-
-            window.renderSubscriptionChart(
-                "dashboard__car-tally-chart",
-                "Vehicle availability",
-                ["used        ", "remaining"],
-                [300, 140]
-            );
-
-            $("[data-bs-spy='scroll']")
-                .scrollspy("refresh");
-            $("[data-bs-toggle='tooltip']")
-                .tooltip();
-
-            $(window).resize(() => refresh());
-
-        });
-
-        const refresh = (function() {
-            $("[data-bs-spy='scroll']").scrollspy("refresh");
-        });
-
-    </script>
+    <script type="text/javascript" src="{{ asset("js/main/main.js") }}"></script>
+    <script type="text/javascript" src="{{ asset("js/main/navigation.js") }}"></script>
 @stop

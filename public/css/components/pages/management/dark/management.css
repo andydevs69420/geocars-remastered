@@ -1,0 +1,23 @@
+#management-page {
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+  overflow-y: auto;
+}
+
+#management__control-panel {
+  background-color: rgb(32, 19, 19) !important;
+}
+
+#management__car-list {
+  background-color: rgb(32, 19, 19) !important;
+}
+
+.management__card-tile {
+  transition: box-shadow 0.6s ease-in-out !important;
+  background-color: rgb(20, 13, 13) !important;
+}
+
+.management__card-tile:hover {
+  box-shadow: 0px 20px 20px -3px rgba(0, 0, 0, 0.3) !important;
+  transition: box-shadow 0.2s ease-in-out !important;
+}/*# sourceMappingURL=management.css.map */

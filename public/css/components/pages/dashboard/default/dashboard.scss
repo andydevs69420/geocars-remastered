@@ -1,5 +1,5 @@
-@import "../../../global/sizing";
-@import "../../../global/themerc";
+@import "../../../../global/sizing";
+@import "../../../../global/themerc";
 
 
 $dashboard-bg: #f0e7e6;
@@ -33,15 +33,14 @@ $dashboard-bg: #f0e7e6;
     border-radius: .75em;
     overflow: hidden;
 
-    @include on_md_and_up
+    @include on_xl_and_up
     {
         position: relative;
         padding-top: 100%;
-        min-height: calc(100% - 1rem) !important;
         border-radius: .25em;
     }
-}
 
+}
 
 .dashboard__tile-vertical {
     position: relative;
@@ -50,6 +49,7 @@ $dashboard-bg: #f0e7e6;
     background-color: $PRIMARY-LIGHT;
     border-radius: .75em;
     overflow: hidden;
+
     @include on_md_and_up
     {
         padding-top: calc(25% - 1rem);
@@ -59,13 +59,10 @@ $dashboard-bg: #f0e7e6;
 
 .dashboard__tile-vertical.tile-vertical-child
 {
-    padding-top: 50%;
+    padding-top: calc(50% - .25rem);
 
     @include on_md_and_up
-    {
-        padding-top: 50%;
-        border-radius: .25em;
-    }
+    { border-radius: .25em; }
 }
 
 $fade-bg-0: rgb(13, 110, 253);
@@ -156,7 +153,7 @@ $fade-bg-1: rgb(238, 67, 76);
     height: auto;
 
 
-    @include on_md_and_up
+    @include on_xl_and_up
     {
         position: absolute !important;
         top: 0;

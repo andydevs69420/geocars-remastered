@@ -144,6 +144,11 @@
   width: 100%;
   height: 100%;
   overflow-y: hidden;
+  -ms-scroll-snap-type: y mandatory !important;
+      scroll-snap-type: y mandatory !important;
+}
+#main__section-wrapper > section {
+  scroll-snap-align: start !important;
 }
 @media screen and (min-width: 768px) {
   #main__section-wrapper {
