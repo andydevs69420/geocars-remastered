@@ -87,7 +87,7 @@
 
         jQuery(() => init());
 
-        let init = (function() {
+        const init = (function() {
             window.renderAnalyticChart(
                 "dashboard__analytics-chart",
                 ["January", "February", "March", "April", "May", "June", "July"], [
@@ -118,10 +118,9 @@
 
         });
 
-        const refresh = function() {
+        const refresh = (function() {
             $("[data-bs-spy='scroll']").scrollspy("refresh");
-            $("[data-bs-toggle='tooltip']").tooltip("refresh");
-        }
+        });
 
     </script>
 @stop

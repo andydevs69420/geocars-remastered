@@ -151,10 +151,43 @@
             </div>
             <div class="col-12 col-xl-4">
                 {{-- TILE 1 --}}
-                <div class="d-block dashboard__tile-large my-2 shadow">
-                    <div class="tile__content-area position-absolute p-0">
-                        <x-dashboard.dashboard-user-tile></x-dashboard.dashboard-user-tile>
+                <div class="d-block dashboard__tile-large position-relative my-2 shadow">
+                    <div class="tile__content-area p-0">
+
+                        <x-dashboard.dashboard-user-tile
+                            userDp="https://cdn.iconscout.com/icon/free/png-256/avatar-372-456324.png"
+                            fullname="Redondo Philipp Andrew Roa"
+                            email="redondophilippandrew@gmail.com"
+                            progress=76></x-dashboard.dashboard-user-tile>
+
+                        <x-dashboard.dashboard-user-tile
+                            userDp="https://cdn.iconscout.com/icon/free/png-256/avatar-372-456324.png"
+                            fullname="Redondo Philipp Andrew Roa"
+                            email="redondophilippandrew@gmail.com"
+                            progress=24></x-dashboard.dashboard-user-tile>
+
+                        <x-dashboard.dashboard-user-tile
+                            userDp="https://cdn.iconscout.com/icon/free/png-256/avatar-372-456324.png"
+                            fullname="Redondo Philipp Andrew Roa"
+                            email="redondophilippandrew@gmail.com"
+                            progress=76></x-dashboard.dashboard-user-tile>
+
+                        <x-dashboard.dashboard-user-tile
+                            userDp="https://cdn.iconscout.com/icon/free/png-256/avatar-372-456324.png"
+                            fullname="Redondo Philipp Andrew Roa"
+                            email="redondophilippandrew@gmail.com"
+                            progress=56></x-dashboard.dashboard-user-tile>
+
                     </div>
+
+                    <span class="position-absolute top-0 end-0 me-1 right-0"
+                        tabindex="0"
+                        data-bs-toggle="tooltip"
+                        data-bs-placement="top"
+                        data-bs-title="Subscribers.">
+                        <i class="fa-solid fa-question-circle text-muted text-opacity-25"></i>
+                    </span>
+
                 </div>
             </div>
         </div>

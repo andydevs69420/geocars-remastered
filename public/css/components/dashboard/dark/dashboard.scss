@@ -26,16 +26,19 @@ $bg-dark:  rgb(32, 19, 19);
 }
 
 .dashboard__tile-large {
-    position: relative;
-    padding-top: 100%;
     width: 100%;
-    min-height: calc(100% - 1rem) !important;
-    background-color: $bg-dark !important;
+    height: auto;
+    background-color: $bg-dark;
     border-radius: .75em;
     overflow: hidden;
 
     @include on_md_and_up
-    { border-radius: .25em; }
+    {
+        position: relative;
+        padding-top: 100%;
+        min-height: calc(100% - 1rem) !important;
+        border-radius: .25em;
+    }
 }
 
 
@@ -148,10 +151,30 @@ $fade-bg-1: rgba(238, 67, 76, 0.4);
 
 .dashboard__tile-large >
 .tile__content-area {
-    top: 0;
-    left: 0;
     width: 100%;
-    height: 100%;
+    height: auto;
+
+
+    @include on_md_and_up
+    {
+        position: absolute !important;
+        top: 0;
+        left: 0;
+        height: 100%;
+
+        -ms-overflow-style: none;
+        scrollbar-width: 2px;
+
+        overflow-y: auto !important;
+        scroll-snap-type: y mandatory !important;
+
+        & > *
+        { scroll-snap-align: start !important; }
+
+        &::-webkit-scrollbar
+        { display: none; }
+
+    }
 }
 
 .dashboard__tile-vertical >

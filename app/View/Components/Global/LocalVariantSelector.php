@@ -21,7 +21,5 @@ class LocalVariantSelector extends Component
      * @return \Illuminate\Contracts\View\View|\Closure|string
      **/
     public function render()
-    {
-        return view('components.global.local-variant-selector');
-    }
+    { return view('components.global.local-variant-selector'); }
 }
