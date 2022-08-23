@@ -88,4 +88,7 @@
 
     <script type="text/javascript" src="{{ asset("js/main/main.js") }}"></script>
     <script type="text/javascript" src="{{ asset("js/main/navigation.js") }}"></script>
+    <script>
+        $("[data-bs-target=\"#management__add-car-modal\"]").click();
+    </script>
 @stop

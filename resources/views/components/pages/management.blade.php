@@ -1,5 +1,9 @@
 <section id="{{ $attributes->get("id")?$attributes->get("id") : "mangement-page"  }}" class="d-block w-100 h-100">
 
+
+    {{-- ADD CAR MODAL --}}
+    <x-management.management-add-car-modal id="management__add-car-modal"></x-management.management-add-car-modal>
+
     <div class="container-lg">
 
         <div id="management__control-panel" class="d-flex flex-column flex-sm-row justify-content-between align-items-stretch align-items-md-center p-2 bg-light rounded shadow-sm">
@@ -19,7 +23,7 @@
 
             <div id="management__tray-1" class="d-block mt-2 mt-sm-0 align-self-end">
                 <span class="d-inline-block w-100 shadow-sm">
-                    <button class="btn btn-sm btn-primary w-100" type="button" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Insert a new car.">
+                    <button class="btn btn-sm btn-primary w-100" type="button" data-bs-toggle="modal" data-bs-target="#management__add-car-modal">
                         <i class="fa-thin fa-plus"></i> <span role="text">New car</span>
                     </button>
                 </span>
@@ -27,10 +31,23 @@
         </div>
 
         <div id="management__car-list" class="d-flex flex-row flex-wrap justify-content-evenly my-3 p-1 w-100 rounded bg-light shadow-sm">
+
+            <x-management.management-empty-car-list>
+                </x-management.management-empty-car-list>
+
+            {{-- <x-management.management-car-tile
+                thumbnail="{{asset('images/car-image-2.webp')}}"
+                car-brand="Toyota" car-model="Vios"
+                status="Vacant" :is-favourite=true></x-management.management-car-tile> --}}
+
             {{-- content --}}
-            @for ($i=0; $i < 100; $i++)
-                <x-management.management-car-tile></x-management.management-car-tile>
-            @endfor
+            {{-- @for($i=0; $i < 99; $i++)
+                <x-management.management-car-tile
+                    thumbnail="{{asset('images/car-image-2.webp')}}"
+                    car-brand="Toyota" car-model="Vios"
+                    status="Vacant" :is-favourite=false></x-management.management-car-tile>
+            @endfor --}}
+
         </div>
 
     </div>
