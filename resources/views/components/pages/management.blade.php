@@ -32,21 +32,21 @@
 
         <div id="management__car-list" class="d-flex flex-row flex-wrap justify-content-evenly my-3 p-1 w-100 rounded bg-light shadow-sm">
 
-            <x-management.management-empty-car-list>
-                </x-management.management-empty-car-list>
+            {{-- <x-management.management-empty-car-list>
+                </x-management.management-empty-car-list> --}}
 
-            {{-- <x-management.management-car-tile
+            <x-management.management-car-tile
                 thumbnail="{{asset('images/car-image-2.webp')}}"
                 car-brand="Toyota" car-model="Vios"
-                status="Vacant" :is-favourite=true></x-management.management-car-tile> --}}
+                status="Vacant" :is-favourite=true></x-management.management-car-tile>
 
             {{-- content --}}
-            {{-- @for($i=0; $i < 99; $i++)
+            @for($i=0; $i < 99; $i++)
                 <x-management.management-car-tile
                     thumbnail="{{asset('images/car-image-2.webp')}}"
                     car-brand="Toyota" car-model="Vios"
                     status="Vacant" :is-favourite=false></x-management.management-car-tile>
-            @endfor --}}
+            @endfor
 
         </div>
 
