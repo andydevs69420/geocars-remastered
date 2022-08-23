@@ -23,14 +23,14 @@ Geographically located car is a car rental app itended for tracking cars.
 <div align="left">
   <img style="display:block;max-width:120px;max-height: 90px;" src="screenshots/screenshot-1.png" alt="screenshot-1" width="120px"/>
   <img style="display:block;max-width:120px;max-height: 90px;" src="screenshots/screenshot-2.png" alt="screenshot-2" width="120px"/>
-  <img style="display:block;max-width:120px;max-height: 90px;" src="screenshots/screenshot-3.png" alt="screenshot-3" width="auto"/>
-  <img style="display:block;max-width:120px;max-height: 90px;" src="screenshots/screenshot-4.png" alt="screenshot-4" width="auto"/>
+  <img style="display:block;max-width:120px;max-height: 90px;" src="screenshots/screenshot-3.png" alt="screenshot-3" width="auto" height="67px"/>
+  <img style="display:block;max-width:120px;max-height: 90px;" src="screenshots/screenshot-4.png" alt="screenshot-4" width="auto" height="67px"/>
   <img style="display:block;max-width:120px;max-height: 90px;" src="screenshots/screenshot-5.png" alt="screenshot-5" width="120px"/>
   <img style="display:block;max-width:120px;max-height: 90px;" src="screenshots/screenshot-6.png" alt="screenshot-6" width="120px"/>
-  <img style="display:block;max-width:120px;max-height: 90px;" src="screenshots/screenshot-7.png" alt="screenshot-7" width="auto"/>
-  <img style="display:block;max-width:120px;max-height: 90px;" src="screenshots/screenshot-8.png" alt="screenshot-8" width="auto"/>
-  <img style="display:block;max-width:120px;max-height: 90px;" src="screenshots/screenshot-9.png" alt="screenshot-9" width="auto"/>
-  <img style="display:block;max-width:120px;max-height: 90px;" src="screenshots/screenshot-10.png" alt="screenshot-10" width="auto"/>
+  <img style="display:block;max-width:120px;max-height: 90px;" src="screenshots/screenshot-7.png" alt="screenshot-7" width="auto" height="67px"/>
+  <img style="display:block;max-width:120px;max-height: 90px;" src="screenshots/screenshot-8.png" alt="screenshot-8" width="auto" height="67px"/>
+  <img style="display:block;max-width:120px;max-height: 90px;" src="screenshots/screenshot-9.png" alt="screenshot-9" width="auto" height="67px"/>
+  <img style="display:block;max-width:120px;max-height: 90px;" src="screenshots/screenshot-10.png" alt="screenshot-10" width="auto" height="67px"/>
   <img style="display:block;max-width:120px;max-height: 90px;" src="screenshots/screenshot-11.png" alt="screenshot-11" width="120px"/>
   <img style="display:block;max-width:120px;max-height: 90px;" src="screenshots/screenshot-12.png" alt="screenshot-12" width="120px"/>
   <img style="display:block;max-width:120px;max-height: 90px;" src="screenshots/screenshot-13.png" alt="screenshot-13" width="120px"/>
