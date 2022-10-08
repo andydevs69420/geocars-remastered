@@ -14,6 +14,7 @@ class Dashboard extends Component
     public function __construct()
     {
         //
+        error_log("called");
     }
 
     /**

@@ -1,0 +1,235 @@
+@import "../../../global/themerc";
+@import "../../../global/sizing";
+
+
+#register__main {
+    position: relative;
+    padding-top: 3em !important;
+    height: auto;
+    min-height: 100%;
+    // @include on_sm_and_up()
+    // { padding-top: calc(3em + 55px); }
+}
+
+#register__backdrop {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    background-image: url("../../../../images/map-vector.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#backdrop__bg {
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    @supports(backdrop-filter: blur(5px)) {
+        backdrop-filter: blur(5px);
+        background-color: rgba(0 , 0, 0, 0.85);
+    }
+    @supports not (backdrop-filter: blur(5px)) {
+        background-color: rgba(0, 0, 0, 0.65);
+    }
+}
+
+$bdrop-gradient-1: rgb(233, 31, 31);
+$bdrop-gradient-2: rgb(60, 63, 233);
+#backdrop__fg {
+    position: absolute;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(155deg, $bdrop-gradient-1, $bdrop-gradient-2);
+    @include on_sm_and_up()
+    {
+        background-image: initial !important;
+        @supports(filter: blur(40px)) {
+            filter: blur(40px);
+        }
+    }
+}
+
+#register__panel {
+    z-index: 2;
+    width: 100%;
+    height: calc( 100vh - 3em ) !important;
+    border-radius: 0;
+
+    // @include on_sm_and_up()
+    // { height: calc( 100vh - calc(3em + 55px) ) !important; }
+
+    @include on_sm_and_up() {
+        min-width: 600px !important;
+        max-width: 50% !important;
+        height: auto !important;
+        min-height: initial !important;
+        background-color: $PRIMARY-DARK !important;
+        box-shadow: 0 0.5rem 1rem rgb(0 0 0 / 15%) !important;
+    }
+
+}
+
+#login__wave-0 {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: -3;
+    transform: scaleX(-1);
+}
+
+svg {
+    filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4)) !important;
+}
+
+#login__wave-1 {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: -2;
+}
+
+#login__wave >
+path {
+    fill: $PRIMARY-DARK;
+}
+
+#register__label-wrap {
+    position: absolute;
+    top: 5%;
+    left: 50%;
+    z-index: 2;
+    transform: translateX(-50%);
+    background-image: inherit !important;
+    @include on_sm_and_up()
+    {
+        position: initial;
+        top: initial;
+        left: initial;
+        transform: initial;
+        margin-top: -55px !important;
+    }
+}
+
+
+#register__icon-wrapper {
+    position: relative;
+    padding-top: 100px;
+    width: 100px;
+    border-radius: 100%;
+    background-color: rgb(37, 26, 26) !important;
+    @include on_sm_and_up() {
+        padding-top: 110px;
+        width: 110px;
+    }
+}
+
+#register__icon-wrapper >
+#pre-wrap {
+    position: absolute;
+    top: 0;
+    padding: 8px;
+}
+
+#register__icon-wrapper >
+#pre-wrap > img {
+    width: 100%;
+    height: 100%;
+}
+
+#register__signup-label {
+    // invert
+    color: $PRIMARY-LIGHT;
+    font-size: calc(1em + 1vw);
+    font-weight: 300 !important;
+    @include on_sm_and_up() {
+        position: initial;
+        inset: initial;
+        z-index: initial;
+        transform: initial;
+    }
+}
+
+.register__signup-label-II,
+.register__signup-label-II * {
+    // invert
+    color: $PRIMARY-LIGHT !important;
+    font-weight: 600 !important;
+}
+
+#scrollable {
+
+    scroll-behavior: smooth;
+    overflow-y: hidden !important;
+}
+
+.page {
+    height: 100% !important;
+    overflow-y: auto !important;
+
+    // remove scroll bar
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.page::-webkit-scrollbar {
+    display: none;
+}
+
+.page >
+.page-wrap {
+    max-height: 100%;
+}
+
+div.input-group {
+    position: relative;
+}
+
+span.input-group-text {
+    position: absolute;
+    left: -1.6px;
+    z-index: 4;
+    min-width: 2.5em;
+    height: 100%;
+    background-color: $PRIMARY-DARK !important;
+    border-top-left-radius: inherit !important;
+    border-bottom-left-radius: inherit !important;
+    @include on_sm_and_up()
+    { background-color: rgb(37, 26, 26) !important; }
+}
+
+input.form-control, select {
+    padding-left: 2.8em !important;
+    border-radius: inherit !important;
+    color: #ffffff !important;
+    background-color: $PRIMARY-DARK !important;
+    @include on_sm_and_up()
+    { background-color: rgb(37, 26, 26) !important; }
+}
+
+
+.register__btn-register-wrapper {
+    background-color: rgb(13, 110, 253) !important;
+}
+
+button {
+    border-radius: inherit !important;
+    border-color: #458520 !important;
+    background-color: #458520 !important;
+}
+
+
+#register__login-link > a {
+    text-decoration: none !important;
+    font-weight: 300;
+    // invert
+    color: $PRIMARY-LIGHT;
+    &:hover {
+        color: #9e67dd !important;
+    }
+}

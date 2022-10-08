@@ -38,7 +38,7 @@
             <x-management.management-car-tile
                 thumbnail="{{asset('images/car-image-2.webp')}}"
                 car-brand="Toyota" car-model="Vios"
-                status="Vacant" :is-favourite=true></x-management.management-car-tile>
+                status="Occupied" :is-favourite=true></x-management.management-car-tile>
 
             {{-- content --}}
             @for($i=0; $i < 99; $i++)

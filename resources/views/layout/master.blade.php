@@ -8,6 +8,7 @@
     <link rel="shortcut icon" href="{{ asset("images/geocarsapp.png") }}" type="image/x-icon">
     <link rel="stylesheet" href="{{ asset("css/webpack/app.css") }}">
     <link rel="stylesheet" href="{{ variant(asset("css/layout/master/default/master.css"), asset("css/layout/master/dark/master.css")) }}">
+
     @section("stylesheet")
         {{-- other css here! --}}
     @show

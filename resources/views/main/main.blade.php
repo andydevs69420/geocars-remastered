@@ -65,6 +65,8 @@
                     <button class="navbar-toggler p-1 text-primary" type="button" data-bs-toggle="collapse" data-bs-target="#main__navbar">
                         <div class="navbar-toggler-icon"></div>
                     </button>
+
+                    <header class="antialiased">Welcome {{ Auth::user()->getFullname() }}!</header>
                 </div>
             </nav>
 
@@ -85,10 +87,15 @@
 @section("javascript")
     {{-- Dashboard JS --}}
     <script type="text/javascript" src="{{ asset("js/components/dashboard/dashboard-chart.js")}}"></script>
+    {{-- Management JS --}}
+    <script type="text/javascript" src="{{ asset("js/components/management/management.js") }}"></script>
 
     <script type="text/javascript" src="{{ asset("js/main/main.js") }}"></script>
     <script type="text/javascript" src="{{ asset("js/main/navigation.js") }}"></script>
-    <script>
-        $("[data-bs-target=\"#management__add-car-modal\"]").click();
+    <script type="text/javascript">
+
+        @if(strcmp(request()->get("modal"), "add") === 0)
+            $("[data-bs-target=\"#management__add-car-modal\"]").click();
+        @endif
     </script>
 @stop

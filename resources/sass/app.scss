@@ -1,5 +1,12 @@
-@import 'node_modules/@fortawesome/fontawesome-free/scss/fontawesome';
-@import 'node_modules/@fortawesome/fontawesome-free/scss/regular';
-@import 'node_modules/@fortawesome/fontawesome-free/scss/solid';
-@import 'node_modules/@fortawesome/fontawesome-free/scss/brands';
-@import "node_modules/bootstrap/scss/bootstrap";
+/*
+ *   Copyright (c) 2022
+ *   All rights reserved.
+ */
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Nunito');
+
+// Variables
+@import 'variables';
+
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';

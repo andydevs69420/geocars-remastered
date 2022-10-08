@@ -155,7 +155,7 @@
                     <div class="tile__content-area p-0">
 
                         <x-dashboard.dashboard-user-tile
-                            userDp="https://cdn.iconscout.com/icon/free/png-256/avatar-372-456324.png"
+                            user-Dp="https://cdn.iconscout.com/icon/free/png-256/avatar-372-456324.png"
                             fullname="Redondo Philipp Andrew Roa"
                             email="redondophilippandrew@gmail.com"
                             progress=76></x-dashboard.dashboard-user-tile>
