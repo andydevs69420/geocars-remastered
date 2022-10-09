@@ -1,4 +1,4 @@
 {
-    "/js/app.js": "/js/app.js",
-    "/css/app.css": "/css/app.css"
+    "/webpack/js/app.js": "/webpack/js/app.js",
+    "/webpack/css/app.css": "/webpack/css/app.css"
 }

@@ -12,4 +12,6 @@ class Plan extends Model
     protected $table = "plan";
     protected $fillable = ["plan_name", "plan_cost", "plan_number_of_vehicle", "plan_access_hours"];
     public $timestamps = false;
+
+
 }

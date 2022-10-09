@@ -50,11 +50,11 @@
                         <span id="login__signin-label-II" class="d-inline d-sm-none ps-3 text-white fw-bold" role="text">{{ __("SIGN IN") }}</span>
                         {{-- email --}}
                         <div class="col-12">
-                            <div class="input-group my-2 shadow-sm rounded">
-                                <span class="input-group-text border-0 bg-white text-primary" role="text">
+                            <div class="input-group input-group-sm my-2 shadow-sm rounded">
+                                <span class="input-group-text border-0 bg-white text-primary text-center" role="text">
                                     <i class="fa-solid fa-envelope fa-1x"></i>
                                 </span>
-                                <input class="form-control border-0 @error('email') is-invalid @enderror" type="email" name="email" placeholder="{{ __("email") }}" autofocus required autocomplete="email">
+                                <input class="form-control form-control-sm border-0 @error('email') is-invalid @enderror" type="email" name="email" placeholder="{{ __("email") }}" autofocus required autocomplete="email">
                             </div>
                             @error('email')
                                 <div class="d-block invalid-feedback" role="alert">
@@ -64,11 +64,11 @@
                         </div>
                         {{-- password --}}
                         <div class="col-12">
-                            <div class="input-group my-2 shadow-sm rounded">
-                                <span class="input-group-text border-0 bg-white text-primary " role="text">
+                            <div class="input-group input-group-sm my-2 shadow-sm rounded">
+                                <span class="input-group-text border-0 bg-white text-primary text-center" role="text">
                                     <i class="fa-solid fa-lock fa-1x"></i>
                                 </span>
-                                <input class="form-control border-0 @error('password') is-invalid @enderror" type="password" name="password" placeholder="{{ __("password") }}" required autocomplete="current-password">
+                                <input class="form-control form-control-sm border-0 @error('password') is-invalid @enderror" type="password" name="password" placeholder="{{ __("password") }}" required autocomplete="current-password">
                             </div>
                             @error('password')
                                 <div class="d-block invalid-feedback" role="alert">
@@ -86,7 +86,7 @@
                         </div>
                         <div class="col-12">
                             <span id="login__btn-signin-wrapper" class="d-block rounded mx-auto my-1 shadow-sm">
-                                <button class="btn btn-primary w-100" type="submit">
+                                <button class="btn btn-sm btn-primary w-100" type="submit">
                                     {{ __("SIGN IN") }}
                                 </button>
                             </span>

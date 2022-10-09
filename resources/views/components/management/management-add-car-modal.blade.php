@@ -20,81 +20,81 @@
             </div>
 
             <div class="modal-body">
-                <form action="#">
+                <form id="management-add-car-modal__form" action="#" method="GET">
 
                     @csrf
 
                     <div class="container-lg">
                         <div class="row">
                             <div class="col-12 col-md-12 order-last">
-                                <form action="asdasdasd" method="POST">
-                                    <div class="container-fluid px-3 py-4 bg-light rounded shadow-sm">
-                                        <div class="row">
-                                            {{-- BRAND --}}
-                                            <div class="col-12 col-md-6">
-                                                <div class="input-group mb-2 rounded shadow-sm">
-                                                    <label class="input-group-text border-primary text-center text-light bg-primary" for="add-car-modal__brand"
-                                                        style="width: 2.6rem !important;">
-                                                        <i class="fa-solid fa-building"></i>
-                                                    </label>
-                                                    <input id="add-car-modal__brand" class="form-control border-0" list="add-car-modal__brands" type="text" pattern="[_a-zA-Z]" placeholder="Brand">
-                                                    <datalist id="add-car-modal__brands">
-                                                        @foreach (\App\Models\Car::all() as $car)
-                                                            <option value="{{ $car->car_brand }}"></option>
-                                                        @endforeach
-                                                    </datalist>
-                                                </div>
+
+                                <div class="container-fluid px-3 py-4 bg-light rounded shadow-sm">
+                                    <div class="row">
+                                        {{-- BRAND --}}
+                                        <div class="col-12 col-md-6">
+                                            <div class="input-group mb-2 rounded shadow-sm">
+                                                <label class="input-group-text border-primary text-center text-light bg-primary" for="add-car-modal__brand"
+                                                    style="width: 2.6rem !important;">
+                                                    <i class="fa-solid fa-building"></i>
+                                                </label>
+                                                <input id="add-car-modal__brand" class="form-control border-0" list="add-car-modal__brands" type="text" pattern="[_a-zA-Z]+" name="brand" placeholder="Brand" required>
+                                                <datalist id="add-car-modal__brands">
+                                                    @foreach (\App\Models\Car::all() as $car)
+                                                        <option value="{{ $car->car_brand }}"></option>
+                                                    @endforeach
+                                                </datalist>
                                             </div>
-                                            {{-- MODEL --}}
-                                            <div class="col-12 col-md-6">
-                                                <div class="input-group my-2 mt-md-0 mb-md-2 rounded shadow-sm">
-                                                    <label class="input-group-text border-primary text-light bg-primary" for="add-car-modal__model"
-                                                        style="width: 2.6rem !important;">
-                                                        <i class="fa-solid fa-car-rear"></i>
-                                                    </label>
-                                                    <input id="add-car-modal__model" class="form-control border-0" list="add-car-modal__models" type="text" pattern="[_a-zA-Z0-9]" placeholder="Model">
-                                                    <datalist id="add-car-modal__models">
-                                                        @foreach (\App\Models\Car::all() as $car)
-                                                            <option data-car-brand="{{ $car->car_brand }}" value="{{ $car->car_model }}"></option>
-                                                        @endforeach
-                                                    </datalist>
-                                                </div>
+                                        </div>
+                                        {{-- MODEL --}}
+                                        <div class="col-12 col-md-6">
+                                            <div class="input-group my-2 mt-md-0 mb-md-2 rounded shadow-sm">
+                                                <label class="input-group-text border-primary text-light bg-primary" for="add-car-modal__model"
+                                                    style="width: 2.6rem !important;">
+                                                    <i class="fa-solid fa-car-rear"></i>
+                                                </label>
+                                                <input id="add-car-modal__model" class="form-control border-0" list="add-car-modal__models" type="text" pattern="^[A-Z][a-z]*(\s*[A-Z][a-z]*)?$" name="model" required placeholder="Model">
+                                                <datalist id="add-car-modal__models">
+                                                    @foreach (\App\Models\Car::all() as $car)
+                                                        <option data-car-brand="{{ $car->car_brand }}" value="{{ $car->car_model }}"></option>
+                                                    @endforeach
+                                                </datalist>
                                             </div>
-                                            {{-- PLATE --}}
-                                            <div class="col-12">
-                                                <div class="input-group my-2 rounded shadow-sm">
-                                                    <label class="input-group-text border-primary text-light bg-primary" for="add-car-modal__plate"
-                                                        style="width: 2.6rem !important;">
-                                                        <i class="fa-solid fa-barcode"></i>
-                                                    </label>
-                                                    <input id="add-car-modal__plate" class="form-control border-0" type="text" pattern="[A-Z0-9]" placeholder="Plate no">
-                                                </div>
+                                        </div>
+                                        {{-- PLATE --}}
+                                        <div class="col-12">
+                                            <div class="input-group my-2 rounded shadow-sm">
+                                                <label class="input-group-text border-primary text-light bg-primary" for="add-car-modal__plate"
+                                                    style="width: 2.6rem !important;">
+                                                    <i class="fa-solid fa-barcode"></i>
+                                                </label>
+                                                <input id="add-car-modal__plate" class="form-control border-0" type="text" pattern="[A-Z0-9]{6,}" name="plate" placeholder="Plate no" required>
                                             </div>
-                                            {{-- UPLOADER --}}
-                                            <div class="col-12">
-                                                <div class="my-2 rounded shadow-sm">
-                                                    <input class="form-control form-control-sm border" type="file" multiple>
-                                                </div>
+                                        </div>
+                                        {{-- UPLOADER --}}
+                                        <div class="col-12">
+                                            <div class="my-2 rounded shadow-sm">
+                                                <input class="form-control form-control-sm border" type="file" name="files" accept=".png, .jpeg" multiple required>
                                             </div>
-                                            {{-- COLOR --}}
-                                            <div class="col-12">
-                                                <span class="d-block small my-2 text-muted" role="text">color variant</span>
-                                                <div class="d-flex flex-row flex-wrap w-100">
-                                                    <span class="d-inline-block rounded shadow-sm">
-                                                        <input id="add-car-modal__color-pick" class="form-control form-control-color border-0" type="color" value="#8970E6">
-                                                    </span>
-                                                </div>
-                                            </div>
-                                            <div class="col-4 offset-8">
-                                                <span class="d-inline-block w-100 shadow-sm">
-                                                    <button class="btn btn-sm btn-primary w-100">
-                                                        ADD
-                                                    </button>
+                                        </div>
+                                        {{-- COLOR --}}
+                                        <div class="col-12">
+                                            <span class="d-block small my-2 text-muted" role="text">color variant</span>
+                                            <div class="d-flex flex-row flex-wrap w-100">
+                                                <span class="d-inline-block rounded shadow-sm">
+                                                    <input id="add-car-modal__color-pick" class="form-control form-control-color border-0" type="color" name="color" value="#8970E6" required>
                                                 </span>
                                             </div>
                                         </div>
+                                        <div class="col-4 offset-8">
+                                            <span class="d-inline-block w-100 shadow-sm">
+                                                <button class="btn btn-sm btn-primary w-100" type="submit">
+                                                    ADD
+                                                </button>
+                                            </span>
+                                        </div>
                                     </div>
-                                </form>
+                                </div>
+
 
                             </div>
                             <div class="col-12 col-md-12">

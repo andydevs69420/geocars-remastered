@@ -7,7 +7,7 @@ use App\Providers\RouteServiceProvider;
 
 use App\Models\User;
 use App\Models\Company;
-use App\Models\UserCompanyDetails;
+use App\Models\UserCompanyPlanDetails;
 
 
 use App\Models\UserPlanDetails;
@@ -78,6 +78,7 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
+        // STEP1: save user
         $user = User::create([
             "lastname" => $data["lastname"],
             "firstname" => $data["firstname"],
@@ -85,19 +86,25 @@ class RegisterController extends Controller
             "password" => Hash::make($data["password"]),
         ]);
 
-        $company = Company::create([
+        // STEP2: save user plan details
+        $upd = $user->userPlan()->create([
+            "user_id_fk" => $user->user_id,
+            "plan_id_fk" => 1
+        ]);
+
+        // STEP3: store company
+        $com = Company::create([
             "company_name" => $data["company"],
             "company_address" => $data["address"]
         ]);
 
-        UserCompanyDetails::create([
-            "user_id_fk" => $user->id,
-            "company_id_fk" => $company->id
-        ]);
+        error_log(json_encode($upd));
+        error_log($upd->id);
 
-        UserPlanDetails::create([
-            "user_id_fk" => $user->id,
-            "plan_id_fk" => $data["plan"]
+        // STEP4: store user company plan
+        $x = $upd->userCompanyDetails()->create([
+            "company_id_fk" => $com->id,
+            "user_plan_details_id_fk" => $upd->id,
         ]);
 
         return $user;

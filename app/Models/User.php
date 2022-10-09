@@ -8,6 +8,8 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 
+use \App\Models\UserPlanDetails;
+use \App\Models\UserCompanyPlanDetails;
 
 class User extends Authenticatable implements MustVerifyEmail
 {
@@ -53,4 +55,12 @@ class User extends Authenticatable implements MustVerifyEmail
      **/
     public function getFullname()
     { return $this->lastname." ".$this-> firstname; }
+
+
+    // ============================== RELATION
+
+    public function userPlan()
+    { return $this->hasMany(UserPlanDetails::class, "user_id_fk"); }
+
+
 }

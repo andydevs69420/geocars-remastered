@@ -31,17 +31,35 @@ Route::get("/variant/{variant?}", [LocalVariantSelectorController::class, "pick_
 
 Auth::routes();
 
-// app main
+Route::get("/logout", function() {
+    Auth::logout();
+    return redirect()->intended("/login");
+})->middleware(["auth", "verified"]);
+
+
+
+/*
+ |-----------+
+ | app main  |
+ |-----------+
+ */
 Route::controller(AppMainController::class)->group(function() {
     // index
     Route::get("/geocarsapp", "index");
 
     // operation: update|insert
-    Route::post("/geocarsapp/{operation}/{info}", "operation")
+    Route::post("/geocarsapp/{operation}/{info}", "action")
     ->whereIn("operation", ["insert", "update"])
-    ->whereIn("info", ["account", "car"]);
+    ->whereIn("info", ["car", "acc", "client"]);
 
     // operation: delete
-    Route::delete("/geocarsapp/car/{carid}")
+    Route::delete("/geocarsapp/car/{carid}", "car")
     ->where("carid", "[0-9]+");
+});
+
+
+
+Route::get("test", function() {
+
+   echo Auth::user()->userPlan()->first()->with(["user"])->get();
 });

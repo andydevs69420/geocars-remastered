@@ -54,7 +54,7 @@
                                     {{-- lastname --}}
                                     <div class="col-6">
                                         <div class="input-group input-group-sm my-2 shadow-sm rounded">
-                                            <span class="input-group-text border-0 bg-primary text-primary" role="text">
+                                            <span class="input-group-text border-0 bg-primary text-primary text-center" role="text">
                                                 <i class="fa-solid fa-user"></i>
                                             </span>
                                             <input id="lastname" class="form-control form-control-sm border-0 @error('lastname') is-invalid @enderror" type="text" pattern="[A-Z][a-zA-Z]+" name="lastname" value="{{ old('lastname') }}" required placeholder="{{ __("lastname") }}" autofocus autocomplete="family-name">
@@ -82,7 +82,7 @@
                                     {{-- email --}}
                                     <div class="col-12">
                                         <div class="input-group input-group-sm my-2 shadow-sm rounded">
-                                            <span class="input-group-text border-0 bg-primary text-primary" role="text">
+                                            <span class="input-group-text border-0 bg-primary text-primary text-center" role="text">
                                                 <i class="fa-solid fa-envelope"></i>
                                             </span>
                                             <input id="email" class="form-control form-control-sm border-0 @error('email') is-invalid @enderror" type="email" name="email" value="{{ old('email') }}" required placeholder="{{ __('email') }}" autocomplete="email">
@@ -96,7 +96,7 @@
                                     {{-- password --}}
                                     <div class="col-12">
                                         <div class="input-group input-group-sm my-2 shadow-sm rounded">
-                                            <span class="input-group-text border-0 bg-primary text-primary" role="text">
+                                            <span class="input-group-text border-0 bg-primary text-primary text-center" role="text">
                                                 <i class="fa-solid fa-lock"></i>
                                             </span>
                                             <input id="password" class="form-control form-control-sm border-0 @error('password') is-invalid @enderror" type="password" name="password" required placeholder="{{ __('password') }}" autocomplete="new-password">
@@ -110,7 +110,7 @@
                                     {{-- confirm password --}}
                                     <div class="col-12">
                                         <div class="input-group input-group-sm my-2 shadow-sm rounded">
-                                            <span class="input-group-text border-0 bg-primary text-primary" role="text">
+                                            <span class="input-group-text border-0 bg-primary text-primary text-center" role="text">
                                                 <i class="fa-solid fa-check-circle"></i>
                                             </span>
                                             <input class="form-control form-control-sm border-0" type="password" name="password_confirmation" placeholder="{{ __("confirm password") }}">
@@ -118,7 +118,7 @@
                                     </div>
                                     <div class="col-12 mt-2 d-block d-sm-none">
                                         <span class="register__btn-register-wrapper d-block rounded mx-auto shadow">
-                                            <button id="register__next-btn" class="btn btn-primary w-100" type="button">
+                                            <button id="register__next-btn" class="btn btn-sm btn-primary w-100" type="button">
                                                 {{ __("NEXT STEP") }}
                                             </button>
                                         </span>
@@ -140,7 +140,7 @@
                                     {{-- company --}}
                                     <div class="col-12">
                                         <div class="input-group input-group-sm my-2 shadow-sm rounded">
-                                            <span class="input-group-text border-0 bg-primary text-primary" role="text">
+                                            <span class="input-group-text border-0 bg-primary text-primary text-center" role="text">
                                                 <i class="fa-solid fa-building"></i>
                                             </span>
                                             <input id="company" class="form-control form-control-sm border-0 @error('company') is-invalid @enderror" type="text" name="company" value="{{ old('company') }}" required placeholder="{{ __("company name") }}" autocomplete="company">
@@ -154,7 +154,7 @@
                                     {{-- address --}}
                                     <div class="col-12">
                                         <div class="input-group input-group-sm my-2 shadow-sm rounded">
-                                            <span class="input-group-text border-0 bg-primary text-primary" role="text">
+                                            <span class="input-group-text border-0 bg-primary text-primary text-center" role="text">
                                                 <i class="fa-solid fa-location"></i>
                                             </span>
                                             <input id="address" class="form-control form-control-sm border-0 @error('address') is-invalid @enderror" type="text" name="address" value="{{ old('address') }}" placeholder="{{ __("address") }}" autocomplete="address">
@@ -168,7 +168,7 @@
                                     {{-- plan --}}
                                     <div class="col-12">
                                         <div class="input-group input-group-sm my-2 shadow-sm rounded">
-                                            <span class="input-group-text border-0 bg-primary text-primary" role="text">
+                                            <span class="input-group-text border-0 bg-primary text-primary text-center" role="text">
                                                 <i class="fa-solid fa-rocket"></i>
                                             </span>
                                             <select id="plan" class="form-select form-select-sm border-0" type="text" name="plan" value="{{ old('plan') }}" placeholder="{{ __("address") }}" required>
