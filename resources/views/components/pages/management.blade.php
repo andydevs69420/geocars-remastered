@@ -32,21 +32,17 @@
 
         <div id="management__car-list" class="d-flex flex-row flex-wrap justify-content-evenly my-3 p-1 w-100 rounded bg-light shadow-sm">
 
-            {{-- <x-management.management-empty-car-list>
-                </x-management.management-empty-car-list> --}}
-
-            <x-management.management-car-tile
-                thumbnail="{{asset('images/car-image-2.webp')}}"
-                car-brand="Toyota" car-model="Vios"
-                status="Occupied" :is-favourite=true></x-management.management-car-tile>
-
-            {{-- content --}}
-            @for($i=0; $i < 99; $i++)
-                <x-management.management-car-tile
-                    thumbnail="{{asset('images/car-image-2.webp')}}"
-                    car-brand="Toyota" car-model="Vios"
-                    status="Vacant" :is-favourite=false></x-management.management-car-tile>
-            @endfor
+            @if (count($cars) <= 0)
+                <x-management.management-empty-car-list>
+                    </x-management.management-empty-car-list>
+            @else
+                    @foreach ($cars as $car)
+                        <x-management.management-car-tile
+                            thumbnail="{{asset('storage/'.$car->carImage()->first()->car_image_link)}}"
+                            car-brand="{{ $car->car_brand }}" car-model="{{ $car->car_model }}"
+                            status="{{ $car->carStatus()->first()->car_status_name }}" :is-favourite=true></x-management.management-car-tile>
+                    @endforeach
+            @endif
 
         </div>
 

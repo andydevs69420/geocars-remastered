@@ -10,6 +10,7 @@ class CarStatus extends Model
     use HasFactory;
 
     protected $table = "car_status";
+    protected $primaryKey="car_status_id";
     protected $fillable = ["car_status_name"];
     public $timestamps = false;
 }

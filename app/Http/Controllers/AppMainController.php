@@ -3,10 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
 
+use \App\Models\Car;
 use \App\Helpers\ServerResponse;
-use Illuminate\Support\Facades\Auth;
 
 class AppMainController extends Controller
 {
@@ -70,9 +71,16 @@ class AppMainController extends Controller
     public function insert__car(Request $request)
     {
         $validator = Validator::make($request->all(), [
+
+            // let user use existing car info
+            // do not validate car
+            // "brand" => "required|string|unique:car,car_brand",
+            // "model" => "required|string|unique:car,car_model",
+
             "brand" => "required|string",
             "model" => "required|string",
-            "plate" => "required|string",
+            "description" => "required|string|min:20",
+            "plate" => "required|string|unique:user_company_car_details,car_plate_number",
             "color" => "required|string",
             "filecount" => "required|int|min:1",
         ]);
@@ -80,19 +88,13 @@ class AppMainController extends Controller
         if ($validator->fails())
         return ServerResponse::fail("failed!", $validator->messages()->toArray());
 
-
-        // STEP1: insert car
-        $car = \App\Models\Car::create([
+        // STEP1: insert user car details
+        $ucd = Auth::user()->userCompanyCar()->create([
             "car_brand" => $request->input("brand"),
             "car_model" => $request->input("model"),
-        ]);
-
-        // STEP2: insert user car details
-        $ucd = \App\Models\UserCompanyCarDetails::create([
-            "user_company_details_id_fk" => Auth::user(),
-            "car_id_fk"  => $car->id,
-            "color" => $request->input("color"),
+            "car_color" => $request->input("color"),
             "car_plate_number" => $request->input("plate"),
+            "car_description"  => $request->input("description"),
             /*
              |  TABLE: car_status
              |  +---------------+-----------------+
@@ -106,15 +108,21 @@ class AppMainController extends Controller
             "car_status_id_fk" => 1
         ]);
 
-        // STEP3: insert images
+        // STEP2: insert images
         for($idx = 0; $idx < $request->input("filecount"); $idx++)
         {
             $num = $idx + 1;
             $img = $request->file("file$num");
 
-            $name = $img->getClientOriginalName()."-".time().$img->getClientOriginalExtension();
-            $path = "/";
+            $name = pathinfo($img->getClientOriginalName(), PATHINFO_FILENAME) . "-" .time() . "." .$img->getClientOriginalExtension();
+            $path = "public/cars/" . $ucd->car_brand . "/" . $ucd->car_model . "/" . $ucd->user_company_car_details_id . "/";
             $img->storeAs($path, $name);
+
+            $imgSRC = "cars/" . $ucd->car_brand . "/" . $ucd->car_model . "/" . $ucd->user_company_car_details_id . "/";
+
+            $ucd->carImage()->create([
+                "car_image_link" => $imgSRC . $name
+            ]);
         }
 
         return ServerResponse::success("success!");

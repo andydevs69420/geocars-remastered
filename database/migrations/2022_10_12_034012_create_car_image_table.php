@@ -13,10 +13,10 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create("car", function (Blueprint $table) {
-            $table->id("car_id");
-            $table->string("car_brand")->unique();
-            $table->string("car_model")->unique();
+        Schema::create("car_image", function (Blueprint $table) {
+            $table->id("car_image_id");
+            $table->foreignId("user_company_car_details_id_fk")->constrained("user_company_car_details", "user_company_car_details_id");
+            $table->string("car_image_link");
         });
     }
 
@@ -27,6 +27,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists("car");
+        Schema::dropIfExists("car_images");
     }
 };

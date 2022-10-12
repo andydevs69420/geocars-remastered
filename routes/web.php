@@ -58,8 +58,6 @@ Route::controller(AppMainController::class)->group(function() {
 });
 
 
-
 Route::get("test", function() {
-
-   echo Auth::user()->userPlan()->first()->with(["user"])->get();
+    echo Auth::user()->userCompanyCar()->get();
 });

@@ -87,8 +87,7 @@ class RegisterController extends Controller
         ]);
 
         // STEP2: save user plan details
-        $upd = $user->userPlan()->create([
-            "user_id_fk" => $user->user_id,
+        $user->userPlan()->create([
             "plan_id_fk" => 1
         ]);
 
@@ -98,13 +97,9 @@ class RegisterController extends Controller
             "company_address" => $data["address"]
         ]);
 
-        error_log(json_encode($upd));
-        error_log($upd->id);
-
         // STEP4: store user company plan
-        $x = $upd->userCompanyDetails()->create([
-            "company_id_fk" => $com->id,
-            "user_plan_details_id_fk" => $upd->id,
+        $user->usercompany()->create([
+            "company_id_fk" => $com->company_id
         ]);
 
         return $user;

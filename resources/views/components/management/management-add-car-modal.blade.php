@@ -39,7 +39,7 @@
                                                 </label>
                                                 <input id="add-car-modal__brand" class="form-control border-0" list="add-car-modal__brands" type="text" pattern="[_a-zA-Z]+" name="brand" placeholder="Brand" required>
                                                 <datalist id="add-car-modal__brands">
-                                                    @foreach (\App\Models\Car::all() as $car)
+                                                    @foreach (\App\Models\UserCompanyCarDetails::all() as $car)
                                                         <option value="{{ $car->car_brand }}"></option>
                                                     @endforeach
                                                 </datalist>
@@ -54,7 +54,7 @@
                                                 </label>
                                                 <input id="add-car-modal__model" class="form-control border-0" list="add-car-modal__models" type="text" pattern="^[A-Z][a-z]*(\s*[A-Z][a-z]*)?$" name="model" required placeholder="Model">
                                                 <datalist id="add-car-modal__models">
-                                                    @foreach (\App\Models\Car::all() as $car)
+                                                    @foreach (\App\Models\UserCompanyCarDetails::all() as $car)
                                                         <option data-car-brand="{{ $car->car_brand }}" value="{{ $car->car_model }}"></option>
                                                     @endforeach
                                                 </datalist>
@@ -70,10 +70,16 @@
                                                 <input id="add-car-modal__plate" class="form-control border-0" type="text" pattern="[A-Z0-9]{6,}" name="plate" placeholder="Plate no" required>
                                             </div>
                                         </div>
+                                        {{-- description --}}
+                                        <div class="col-12">
+                                            <div class="input-group my-2 rounded shadow-sm">
+                                                <textarea class="form-control border-0" id="" tyep="text" name="description" cols="30" rows="3" placeholder="description"></textarea>
+                                            </div>
+                                        </div>
                                         {{-- UPLOADER --}}
                                         <div class="col-12">
                                             <div class="my-2 rounded shadow-sm">
-                                                <input class="form-control form-control-sm border" type="file" name="files" accept=".png, .jpeg" multiple required>
+                                                <input id="uploader" class="form-control form-control-sm border" type="file" name="files" accept=".png, .jpeg" multiple required>
                                             </div>
                                         </div>
                                         {{-- COLOR --}}
@@ -100,28 +106,26 @@
                             <div class="col-12 col-md-12">
                                 <div class="container-fluid p-1 my-3 bg-light rounded shadow-sm">
                                     {{-- carouel --}}
-                                    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true">
-                                        <div class="carousel-indicators">
-                                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                                    <div class="carousel slide" id="carouselCarIndicators" data-bs-ride="true">
+                                        <div class="carousel-indicators" id="indicatorWrapper">
+                                            {{--
+                                                JS auto generated
+                                                <button type="button" data-bs-target="#carouselCarIndicators" data-bs-slide-to="${id}" class="active" aria-current="true" aria-label="Slide 1"></button>
+                                            --}}
                                         </div>
-                                        <div class="carousel-inner">
-                                            <div class="carousel-item active">
-                                                <img src="https://www.bugatti.com/fileadmin/_processed_/9/5/csm_HEADER_22de7ed3a8.jpg" class="d-block w-100" alt="...">
-                                            </div>
-                                            <div class="carousel-item">
-                                                <img src="https://www.bugatti.com/fileadmin/_processed_/9/5/csm_HEADER_22de7ed3a8.jpg" class="d-block w-100" alt="...">
-                                            </div>
-                                            <div class="carousel-item">
-                                                <img src="https://www.bugatti.com/fileadmin/_processed_/9/5/csm_HEADER_22de7ed3a8.jpg" class="d-block w-100" alt="...">
-                                            </div>
+                                        <div class="carousel-inner" id="carouselCarInner">
+                                            {{--
+                                                JS Auto Generated
+                                                <div class="carousel-item active">
+                                                    <img src="https://www.bugatti.com/fileadmin/_processed_/9/5/csm_HEADER_22de7ed3a8.jpg" class="d-block w-100" alt="...">
+                                                </div>
+                                            --}}
                                         </div>
-                                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselCarIndicators" data-bs-slide="prev">
                                             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                                             <span class="visually-hidden">Previous</span>
                                         </button>
-                                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                                        <button class="carousel-control-next" type="button" data-bs-target="#carouselCarIndicators" data-bs-slide="next">
                                             <span class="carousel-control-next-icon" aria-hidden="true"></span>
                                             <span class="visually-hidden">Next</span>
                                         </button>

@@ -60,7 +60,12 @@ class User extends Authenticatable implements MustVerifyEmail
     // ============================== RELATION
 
     public function userPlan()
-    { return $this->hasMany(UserPlanDetails::class, "user_id_fk"); }
+    { return $this->hasOne(UserPlanDetails::class, "user_id_fk", "user_id"); }
 
+    public function userCompany()
+    { return $this->userPlan()->first()->userCompanyPlanDetails(); }
+
+    public function userCompanyCar()
+    { return $this->userCompany()->first()->userCompanyCarDetails(); }
 
 }
