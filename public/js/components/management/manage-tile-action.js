@@ -21,6 +21,7 @@
             url: $(e).data("link"),
             method: "GET",
             success: function(response, status, xhr) {
+                $("#management__car-view-modal").modal("toggle");
                 console.log(response);
             },
             error: function(response, status, xhr) {

@@ -4,6 +4,9 @@
     {{-- ADD CAR MODAL --}}
     <x-management.management-add-car-modal id="management__add-car-modal"></x-management.management-add-car-modal>
 
+    {{-- UPDATE CAR MODAL --}}
+    <x-management.management-car-view id="management__car-view-modal"></x-management.management-car-view>
+
     <div class="container-lg">
 
         <div id="management__control-panel" class="d-flex flex-column flex-sm-row justify-content-between align-items-stretch align-items-md-center p-2 bg-light rounded shadow-sm">

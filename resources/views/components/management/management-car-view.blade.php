@@ -1,5 +1,5 @@
 <div
-    id="{{ $attributes->get("id")?$attributes->get("id") : "management__add-car-modal" }}"
+    id="{{ $attributes->get("id")?$attributes->get("id") : "management__view-car-modalsss" }}"
     class="modal fade"
     data-bs-backdrop="static"
     data-bs-keyboard="false"
@@ -12,7 +12,7 @@
 
             <div class="modal-header px-4 py-2 text-center border-0">
 
-                <small class="d-inline px-1 display-6 fs-4">Add a new car</small>
+                <small class="d-inline px-1 display-6 fs-4">Car info</small>
 
                 <button class="btn ms-auto" type="button" data-bs-dismiss="modal" aria-label="Close">
                     <i class="fa-solid fa-close"></i>
@@ -20,7 +20,7 @@
             </div>
 
             <div class="modal-body">
-                <form id="management-add-car-modal__form" action="#" method="GET">
+                <form id="management__car-view-form" action="#" method="GET">
 
                     @csrf
 
@@ -33,12 +33,12 @@
                                         {{-- BRAND --}}
                                         <div class="col-12 col-md-6">
                                             <div class="input-group mb-2 rounded shadow-sm">
-                                                <label class="input-group-text border-primary text-center text-light bg-primary" for="add-car-modal__brand"
+                                                <label class="input-group-text border-primary text-center text-light bg-primary" for="view-car-modal__brand"
                                                     style="width: 2.6rem !important;">
                                                     <i class="fa-solid fa-building"></i>
                                                 </label>
-                                                <input id="add-car-modal__brand" class="form-control border-0" list="add-car-modal__brands" type="text" pattern="[_a-zA-Z]+" name="brand" placeholder="Brand" required>
-                                                <datalist id="add-car-modal__brands">
+                                                <input id="view-car-modal__brand" class="form-control border-0" list="view-car-modal__brands" type="text" pattern="[_a-zA-Z]+" name="brand" placeholder="Brand" required>
+                                                <datalist id="view-car-modal__brands">
                                                     @foreach (\App\Models\UserCompanyCarDetails::all() as $car)
                                                         <option value="{{ $car->car_brand }}"></option>
                                                     @endforeach
@@ -48,12 +48,12 @@
                                         {{-- MODEL --}}
                                         <div class="col-12 col-md-6">
                                             <div class="input-group my-2 mt-md-0 mb-md-2 rounded shadow-sm">
-                                                <label class="input-group-text border-primary text-light bg-primary" for="add-car-modal__model"
+                                                <label class="input-group-text border-primary text-light bg-primary" for="view-car-modal__model"
                                                     style="width: 2.6rem !important;">
                                                     <i class="fa-solid fa-car-rear"></i>
                                                 </label>
-                                                <input id="add-car-modal__model" class="form-control border-0" list="add-car-modal__models" type="text" pattern="^[A-Z][a-z]*(\s*[A-Z][a-z]*)?$" name="model" required placeholder="Model">
-                                                <datalist id="add-car-modal__models">
+                                                <input id="view-car-modal__model" class="form-control border-0" list="view-car-modal__models" type="text" pattern="^[A-Z][a-z]*(\s*[A-Z][a-z]*)?$" name="model" required placeholder="Model">
+                                                <datalist id="view-car-modal__models">
                                                     @foreach (\App\Models\UserCompanyCarDetails::all() as $car)
                                                         <option data-car-brand="{{ $car->car_brand }}" value="{{ $car->car_model }}"></option>
                                                     @endforeach
@@ -63,23 +63,23 @@
                                         {{-- PLATE --}}
                                         <div class="col-12">
                                             <div class="input-group my-2 rounded shadow-sm">
-                                                <label class="input-group-text border-primary text-light bg-primary" for="add-car-modal__plate"
+                                                <label class="input-group-text border-primary text-light bg-primary" for="view-car-modal__plate"
                                                     style="width: 2.6rem !important;">
                                                     <i class="fa-solid fa-barcode"></i>
                                                 </label>
-                                                <input id="add-car-modal__plate" class="form-control border-0" type="text" pattern="[A-Z0-9]{6,}" name="plate" placeholder="Plate no" required>
+                                                <input id="view-car-modal__plate" class="form-control border-0" type="text" pattern="[A-Z0-9]{6,}" name="plate" placeholder="Plate no" required>
                                             </div>
                                         </div>
                                         {{-- description --}}
                                         <div class="col-12">
                                             <div class="input-group my-2 rounded shadow-sm">
-                                                <textarea class="form-control border-0" id="" tyep="text" name="description" cols="30" rows="3" placeholder="description"></textarea>
+                                                <textarea id="view-car__description" class="form-control border-0" id="" tyep="text" name="description" cols="30" rows="3" placeholder="description"></textarea>
                                             </div>
                                         </div>
                                         {{-- UPLOADER --}}
                                         <div class="col-12">
                                             <div class="my-2 rounded shadow-sm">
-                                                <input id="uploader" class="form-control form-control-sm border" type="file" name="files" accept=".png, .jpeg" multiple required>
+                                                <input id="view-car-modal__uploader" class="form-control form-control-sm border" type="file" name="files" accept=".png, .jpeg" multiple required>
                                             </div>
                                         </div>
                                         {{-- COLOR --}}
@@ -87,7 +87,7 @@
                                             <span class="d-block small my-2 text-muted" role="text">color variant</span>
                                             <div class="d-flex flex-row flex-wrap w-100">
                                                 <span class="d-inline-block rounded shadow-sm">
-                                                    <input id="add-car-modal__color-pick" class="form-control form-control-color border-0" type="color" name="color" value="#8970E6" required>
+                                                    <input id="view-car-modal__color-pick" class="form-control form-control-color border-0" type="color" name="color" value="#8970E6" required>
                                                 </span>
                                             </div>
                                         </div>
@@ -104,14 +104,14 @@
                             <div class="col-12 col-md-12">
                                 <div class="container-fluid my-3 p-0 bg-light rounded shadow-sm">
                                     {{-- carouel --}}
-                                    <div class="d-none carousel slide" id="carouselCar" data-bs-ride="true">
-                                        <div class="carousel-indicators" id="indicatorWrapper">
+                                    <div class="d-none carousel slide" id="management__view-car-carouselCar" data-bs-ride="true">
+                                        <div class="carousel-indicators" id="management__view-car-indicatorWrapper">
                                             {{--
                                                 JS auto generated
                                                 <button type="button" data-bs-target="#carouselCar" data-bs-slide-to="${id}" class="active" aria-current="true" aria-label="Slide 1"></button>
                                             --}}
                                         </div>
-                                        <div class="carousel-inner" id="carouselCarInner">
+                                        <div class="carousel-inner" id="management__view-car-carouselCarInner">
                                             {{--
                                                 JS Auto Generated
                                                 <div class="carousel-item active">

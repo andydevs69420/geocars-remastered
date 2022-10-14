@@ -47,7 +47,7 @@ Route::controller(AppMainController::class)->group(function() {
     // index
     Route::get("/geocarsapp", "index");
     //car info view
-    Route::get("/geocarsapp/car/{userid}/{carid}", "carview")
+    Route::get("/geocarsapp/car/{userid}/{carid}", "cardata")
         ->where("userid", "[0-9]+")
         ->where("carid" , "[0-9]+");
     // operation: update|insert
