@@ -12,10 +12,45 @@ $dashboard-bg: #f0e7e6;
 
 
 .management__card-tile
-{ transition: box-shadow .6s ease-in-out !important; }
+{
+    width: 80%;
+    transition: box-shadow .6s ease-in-out !important; }
 
 .management__card-tile:hover
 {
     box-shadow: 0px 20px 20px -3px rgba(0,0,0,0.2) !important;
     transition: box-shadow .2s ease-in-out !important;
+}
+
+@media screen and (min-width: 576px) {
+    .management__card-tile {
+        width: calc(80% / 2) !important;
+    }
+    .management__card-tile:nth-child(2n+1):not(:first-child) {
+        margin-left: 1.8em !important;
+        margin-right: auto !important;
+    }
+}
+
+
+@media screen and (min-width: 992px) {
+    .management__card-tile {
+        width: calc(80% / 3) !important;
+    }
+    .management__card-tile:nth-child(2n+1):not(:first-child) {
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+    .management__card-tile:last-child {
+        margin-left: 1.8em !important;
+    }
+}
+
+
+
+@media screen and (min-width: 1200px) {
+    .management__card-tile {
+        width: calc(80% / 4) !important;
+    }
+
 }

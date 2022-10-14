@@ -30,7 +30,7 @@
             </div>
         </div>
 
-        <div id="management__car-list" class="d-flex flex-row flex-wrap justify-content-evenly my-3 p-1 w-100 rounded bg-light shadow-sm">
+        <div id="management__car-list" class="d-flex flex-row flex-wrap justify-content-start my-3 p-1 w-100 rounded bg-light shadow-sm">
 
             @if (count($cars) <= 0)
                 <x-management.management-empty-car-list>
@@ -38,9 +38,14 @@
             @else
                     @foreach ($cars as $car)
                         <x-management.management-car-tile
-                            thumbnail="{{asset('storage/'.$car->carImage()->first()->car_image_link)}}"
-                            car-brand="{{ $car->car_brand }}" car-model="{{ $car->car_model }}"
-                            status="{{ $car->carStatus()->first()->car_status_name }}" :is-favourite=true></x-management.management-car-tile>
+                            thumbnail="{{ asset('storage/'.$car->carImage()->first()->car_image_link) }}"
+                            :car-id="$car->user_company_car_details_id"
+                            :car-brand="$car->car_brand"
+                            :car-model="$car->car_model"
+                            :status="$car->carStatus()->first()->car_status_name"
+                            :is-favourite="false"
+                            >
+                        </x-management.management-car-tile>
                     @endforeach
             @endif
 

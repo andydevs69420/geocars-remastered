@@ -89,6 +89,7 @@
     <script type="text/javascript" src="{{ asset("js/components/pages/dashboard/dashboard-chart.js")}}"></script>
     {{-- Management JS --}}
     <script type="text/javascript" src="{{ asset("js/components/pages/management/management.js") }}"></script>
+    <script type="text/javascript" src="{{ asset("js/components/management/manage-tile-action.js") }}"></script>
 
     <script type="text/javascript" src="{{ asset("js/main/main.js") }}"></script>
     <script type="text/javascript" src="{{ asset("js/main/navigation.js") }}"></script>

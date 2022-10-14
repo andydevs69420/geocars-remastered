@@ -25,6 +25,17 @@ class AppMainController extends Controller
     { return view("main.main"); }
 
 
+    public function carview(Request $request, int $userid, int $carid)
+    {
+        if  (Auth::user()->user_id != $userid)
+            return abort(401);
+
+        return Auth::user()
+            ->userCompanyCar()
+            ->where("user_company_car_details_id", "=", $carid)
+            ->first();
+    }
+
     /**
      * operation
      * @param Request $request request

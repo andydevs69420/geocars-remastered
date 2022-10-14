@@ -10,7 +10,10 @@
 
     let form, fields, imageField, allowSubmit = true;
 
+
     form = $("#management-add-car-modal__form");
+
+    // on Form submit
     form.submit(function(e) {
         e.preventDefault();
 
@@ -50,19 +53,31 @@
             contentType: false,
             success: (response, status, xhr) => {
                 allowSubmit = true;
-                console.log(response, status);
                 fields.val("");
+                $("#carouselCar").addClass("d-none");
+                showMessage("Successfully inserted car!");
             },
             error: (response, status, xhr) => {
                 allowSubmit = true;
-                console.error(response.responseJSON);
+                Object.keys(response.responseJSON.data)
+                .forEach((key) => {
+                    $(`#${key}-feedback`).text(response.responseJSON.data[key]);
+                });
             }
         });
     });
 
-
     imageField = $("#uploader");
+
+    // on File chaged
     imageField.change((e) => {
+        if (e.target.files.length > 0)
+            $("#carouselCar")
+                .removeClass("d-none");
+        else
+            $("#carouselCar")
+                .addClass("d-none");
+
 
         let indicatorContainer = $("#indicatorWrapper");
         let itemContainer      = $("#carouselCarInner");
@@ -77,6 +92,20 @@
             asCarouselItem(idx, files[idx]);
         }
     });
+
+    /**
+     * SHows message from server
+     * @param {String} message
+     * @return null
+     **/
+    function showMessage(message)
+    {
+        let messageBox = $("#on-message__modal");
+            messageBox.find("#message__container")
+            .text(message);
+
+        messageBox.removeClass("d-none");
+    }
 
     /**
      * asCarouselItem
@@ -105,6 +134,5 @@
             itemContainer.append(current);
         }
     }
-
 
 })(window);

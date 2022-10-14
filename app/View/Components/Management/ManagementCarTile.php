@@ -8,6 +8,7 @@ class ManagementCarTile extends Component
 {
 
     private string $thumbnail;
+    private int    $carId;
     private string $carBrand;
     private string $carModel;
     private string $status;
@@ -19,6 +20,7 @@ class ManagementCarTile extends Component
      **/
     public function __construct(
         string $thumbnail,
+        int $carId       ,
         string $carBrand ,
         string $carModel ,
         string $status   ,
@@ -27,6 +29,7 @@ class ManagementCarTile extends Component
     {
         //
         $this->thumbnail = $thumbnail;
+        $this->carId     = $carId;
         $this->carBrand  = $carBrand;
         $this->carModel  = $carModel;
         $this->status    = $status;
@@ -45,6 +48,9 @@ class ManagementCarTile extends Component
 
     public function getThumbnail()
     { return $this->thumbnail; }
+
+    public function getId()
+    { return $this->carId; }
 
     public function getBrand()
     { return $this->carBrand; }

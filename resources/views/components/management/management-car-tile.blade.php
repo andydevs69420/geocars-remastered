@@ -1,8 +1,9 @@
-<div class="management__card-tile card mx-2 mx-md-3 my-3 border-0 rounded-0 shadow"
-     style="width: 200px;">
+<div class="management__card-tile card mx-auto my-3 border-0 rounded-0 shadow text-decoration-none"
+    onclick="return window.tileClick(this);"
+    data-link="{{ url("/geocarsapp/car/" . Auth::user()->user_id . "/" . $getId()) }}">
 
     <div class="card-img-top d-flex justify-content-center align-items-center overflow-hidden"
-         style="width: 100%; height: 200px;">
+         style="width: 100%; height: 200px; background-color: #A1A1A1 !important;">
         <img class="img-fluid"
             src="{{ $getThumbnail() }}"
             alt="{{ $getBrand() }}-{{ $getModel() }}">
@@ -17,7 +18,7 @@
 
             <div class="vr"></div>
 
-            <button class="btn btn-small rounded-circle p-0"
+            <button class="btn-favourite btn btn-small rounded-circle p-0"
                 style="width: 30px; height: 30px;"
                 data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="{{ $isFavourite()? "Remove from favourite":"Favourite" }}">
                 <i class="fa-solid fa-heart {{ $getBGByFavouriteValue() }}"></i>

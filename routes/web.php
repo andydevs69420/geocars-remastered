@@ -46,16 +46,19 @@ Route::get("/logout", function() {
 Route::controller(AppMainController::class)->group(function() {
     // index
     Route::get("/geocarsapp", "index");
-
+    //car info view
+    Route::get("/geocarsapp/car/{userid}/{carid}", "carview")
+        ->where("userid", "[0-9]+")
+        ->where("carid" , "[0-9]+");
     // operation: update|insert
     Route::post("/geocarsapp/{operation}/{info}", "action")
-    ->whereIn("operation", ["insert", "update"])
-    ->whereIn("info", ["car", "acc", "client"]);
-
+        ->whereIn("operation", ["insert", "update"])
+        ->whereIn("info", ["car", "acc", "client"]);
     // operation: delete
     Route::delete("/geocarsapp/car/{carid}", "car")
-    ->where("carid", "[0-9]+");
+        ->where("carid", "[0-9]+");
 });
+
 
 
 Route::get("test", function() {

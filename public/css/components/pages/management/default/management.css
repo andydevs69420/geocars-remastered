@@ -6,10 +6,38 @@
 }
 
 .management__card-tile {
+  width: 80%;
   transition: box-shadow 0.6s ease-in-out !important;
 }
 
 .management__card-tile:hover {
   box-shadow: 0px 20px 20px -3px rgba(0, 0, 0, 0.2) !important;
   transition: box-shadow 0.2s ease-in-out !important;
+}
+
+@media screen and (min-width: 576px) {
+  .management__card-tile {
+    width: 40% !important;
+  }
+  .management__card-tile:nth-child(2n+1):not(:first-child) {
+    margin-left: 1.8em !important;
+    margin-right: auto !important;
+  }
+}
+@media screen and (min-width: 992px) {
+  .management__card-tile {
+    width: 26.6666666667% !important;
+  }
+  .management__card-tile:nth-child(2n+1):not(:first-child) {
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+  .management__card-tile:last-child {
+    margin-left: 1.8em !important;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .management__card-tile {
+    width: 20% !important;
+  }
 }/*# sourceMappingURL=management.css.map */

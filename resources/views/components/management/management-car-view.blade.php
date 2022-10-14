@@ -26,13 +26,6 @@
 
                     <div class="container-lg">
                         <div class="row">
-
-                            <div class="col-12">
-                                <div id="on-message__modal" class="d-none alert alert-warning" role="alert">
-                                    <strong id="message__container" class="alert-text">asdasd</strong>
-                                </div>
-                            </div>
-
                             <div class="col-12 col-md-12 order-last">
 
                                 <div class="container-fluid px-3 py-4 bg-light rounded shadow-sm">
@@ -51,9 +44,6 @@
                                                     @endforeach
                                                 </datalist>
                                             </div>
-                                            <div class="col">
-                                                <strong id="brand-feedback" class="d-block invalid-feedback"></strong>
-                                            </div>
                                         </div>
                                         {{-- MODEL --}}
                                         <div class="col-12 col-md-6">
@@ -69,9 +59,6 @@
                                                     @endforeach
                                                 </datalist>
                                             </div>
-                                            <div class="col">
-                                                <strong id="model-feedback" class="d-block invalid-feedback"></strong>
-                                            </div>
                                         </div>
                                         {{-- PLATE --}}
                                         <div class="col-12">
@@ -82,26 +69,17 @@
                                                 </label>
                                                 <input id="add-car-modal__plate" class="form-control border-0" type="text" pattern="[A-Z0-9]{6,}" name="plate" placeholder="Plate no" required>
                                             </div>
-                                            <div class="col">
-                                                <strong id="plate-feedback" class="d-block invalid-feedback"></strong>
-                                            </div>
                                         </div>
                                         {{-- description --}}
                                         <div class="col-12">
                                             <div class="input-group my-2 rounded shadow-sm">
                                                 <textarea class="form-control border-0" id="" tyep="text" name="description" cols="30" rows="3" placeholder="description"></textarea>
                                             </div>
-                                            <div class="col">
-                                                <strong id="description-feedback" class="d-block invalid-feedback"></strong>
-                                            </div>
                                         </div>
                                         {{-- UPLOADER --}}
                                         <div class="col-12">
                                             <div class="my-2 rounded shadow-sm">
                                                 <input id="uploader" class="form-control form-control-sm border" type="file" name="files" accept=".png, .jpeg" multiple required>
-                                            </div>
-                                            <div class="col">
-                                                <strong id="file-feedback" class="d-block invalid-feedback"></strong>
                                             </div>
                                         </div>
                                         {{-- COLOR --}}
@@ -111,9 +89,6 @@
                                                 <span class="d-inline-block rounded shadow-sm">
                                                     <input id="add-car-modal__color-pick" class="form-control form-control-color border-0" type="color" name="color" value="#8970E6" required>
                                                 </span>
-                                            </div>
-                                            <div class="col">
-                                                <strong id="color-feedback" class="d-block invalid-feedback"></strong>
                                             </div>
                                         </div>
                                         <div class="col-4 offset-8">
