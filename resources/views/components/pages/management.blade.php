@@ -5,7 +5,7 @@
     <x-management.management-add-car-modal id="management__add-car-modal"></x-management.management-add-car-modal>
 
     {{-- UPDATE CAR MODAL --}}
-    <x-management.management-car-view id="management__car-view-modal"></x-management.management-car-view>
+    <x-management.management-view-car id="management__view-car-modal"></x-management.management-view-car>
 
     <div class="container-lg">
 

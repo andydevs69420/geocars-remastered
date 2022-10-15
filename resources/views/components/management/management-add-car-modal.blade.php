@@ -14,7 +14,11 @@
 
                 <small class="d-inline px-1 display-6 fs-4">Add a new car</small>
 
-                <button class="btn ms-auto" type="button" data-bs-dismiss="modal" aria-label="Close">
+                <button class="btn ms-auto"
+                        type="button"
+                        data-bs-dismiss="modal"
+                        aria-label="Close"
+                        onclick="window.modalClose('#{{ $attributes->get("id")?$attributes->get("id") : "management__add-car-modal" }}')">
                     <i class="fa-solid fa-close"></i>
                 </button>
             </div>
@@ -98,7 +102,7 @@
                                         {{-- UPLOADER --}}
                                         <div class="col-12">
                                             <div class="my-2 rounded shadow-sm">
-                                                <input id="uploader" class="form-control form-control-sm border" type="file" name="files" accept=".png, .jpeg" multiple required>
+                                                <input id="uploader" class="form-control form-control-sm border" type="file" name="files" accept=".png, .jpg" multiple required>
                                             </div>
                                             <div class="col">
                                                 <strong id="file-feedback" class="d-block invalid-feedback"></strong>

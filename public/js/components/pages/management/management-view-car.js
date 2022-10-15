@@ -1,40 +1,26 @@
 /*
- *   Copyright (c) 2022
+ *   Copyright (c) 2022 andydevs69420
  *   All rights reserved.
  */
 
 
 
 (function(root) {
-    jQuery(() => init());
-
-    function init() {
-        ajaxLoad();
-        $(".btn-favourite").click((e) => {
-            e.stopPropagation();
-        });
-    }
 
     root.tileClick = function(e) {
-        let asJq = $(e);
         $.ajax({
             url: $(e).data("link"),
             method: "GET",
             success: function(response, status, xhr) {
-                $("#management__car-view-modal").modal("toggle");
+                $("#management__view-car-modal")
+                    .modal("toggle");
                 console.log(response);
             },
             error: function(response, status, xhr) {
-                console.log(response);
+                console.error(response);
             }
         })
     }
 
-    function ajaxLoad() {
-
-    }
-
 
 })(window);
-
-

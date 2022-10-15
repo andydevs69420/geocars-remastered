@@ -1,5 +1,5 @@
 <div
-    id="{{ $attributes->get("id")?$attributes->get("id") : "management__view-car-modalsss" }}"
+    id="{{ $attributes->get("id")?$attributes->get("id") : "management__view-car-modal" }}"
     class="modal fade"
     data-bs-backdrop="static"
     data-bs-keyboard="false"
