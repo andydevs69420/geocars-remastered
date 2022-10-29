@@ -24,6 +24,12 @@ class Management extends Component
      */
     public function render()
     {
-        return view('components.pages.management', ["cars" => Auth::user()->userCompanyCar()->get()]);
+        return view('components.pages.management', [
+            "cars" => Auth::user()
+                ->userCompanyCar()
+                ->orderBy("car_brand")
+                ->orderBy("car_model")
+                ->get()
+        ]);
     }
 }

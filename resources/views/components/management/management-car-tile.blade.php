@@ -3,7 +3,7 @@
     data-link="{{ url("/geocarsapp/car/" . Auth::user()->user_id . "/" . $getId()) }}">
 
     <div class="card-img-top d-flex justify-content-center align-items-center overflow-hidden"
-         style="width: 100%; height: 200px; background-color: #A1A1A1 !important;">
+         style="width: 100%; height: 250px; background-color: #A1A1A1 !important;">
         <img class="img-fluid"
             src="{{ $getThumbnail() }}"
             alt="{{ $getBrand() }}-{{ $getModel() }}">

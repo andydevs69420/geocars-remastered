@@ -14,7 +14,7 @@ class UserCompanyCarDetails extends Model
 
     protected $table = "user_company_car_details";
     protected $primaryKey="user_company_car_details_id";
-    protected $fillable = ["user_company_details_id_fk", "car_brand", "car_model", "car_color", "car_plate_number", "car_description", "car_status_id_fk"];
+    protected $fillable = ["user_company_details_id_fk", "car_brand", "car_model", "car_color", "car_plate", "car_description", "car_status_id_fk"];
     public $timestamps = true;
 
     // inverse

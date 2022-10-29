@@ -4,8 +4,8 @@
 $dashboard-bg: #f0e7e6;
 
 #management-page {
-    padding-top: 0.75rem;
-    padding-bottom: 0.75rem;
+    // padding-top: 0.75rem;
+    // padding-bottom: 0.75rem;
     overflow-y: auto;
     background-color: $dashboard-bg !important;
 }
@@ -13,8 +13,12 @@ $dashboard-bg: #f0e7e6;
 
 .management__card-tile
 {
+    flex-grow: 1;
     width: 80%;
-    transition: box-shadow .6s ease-in-out !important; }
+    margin-left: 1em !important;
+    margin-right: 1em !important;
+    transition: box-shadow .6s ease-in-out !important;
+}
 
 .management__card-tile:hover
 {
@@ -26,10 +30,6 @@ $dashboard-bg: #f0e7e6;
     .management__card-tile {
         width: calc(80% / 2) !important;
     }
-    .management__card-tile:nth-child(2n+1):not(:first-child) {
-        margin-left: 1.8em !important;
-        margin-right: auto !important;
-    }
 }
 
 
@@ -37,20 +37,12 @@ $dashboard-bg: #f0e7e6;
     .management__card-tile {
         width: calc(80% / 3) !important;
     }
-    .management__card-tile:nth-child(2n+1):not(:first-child) {
-        margin-left: auto !important;
-        margin-right: auto !important;
-    }
-    .management__card-tile:last-child {
-        margin-left: 1.8em !important;
-    }
 }
-
-
 
 @media screen and (min-width: 1200px) {
     .management__card-tile {
         width: calc(80% / 4) !important;
     }
-
 }
+
+

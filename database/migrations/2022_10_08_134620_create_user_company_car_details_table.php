@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string("car_brand");
             $table->string("car_model");
             $table->string("car_color");
-            $table->string("car_plate_number");
+            $table->string("car_plate");
             $table->text("car_description");
             $table->foreignId("car_status_id_fk")->constrained("car_status", "car_status_id");
             $table->timestamps();

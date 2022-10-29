@@ -32,8 +32,8 @@ class AppMainController extends Controller
 
         return Auth::user()
             ->userCompanyCar()
-            ->where("user_company_car_details_id", "=", $carid)
-            ->first()->with("carImage")->first();
+            ->where("user_company_car_details_id", $carid)
+            ->with("carImage")->first();
     }
 
     /**
@@ -91,7 +91,7 @@ class AppMainController extends Controller
             "brand" => "required|string",
             "model" => "required|string",
             "description" => "required|string|min:20",
-            "plate" => "required|string|unique:user_company_car_details,car_plate_number",
+            "plate" => "required|string|unique:user_company_car_details,car_plate",
             "color" => "required|string",
             "filecount" => "required|int|min:1",
         ]);
@@ -104,7 +104,7 @@ class AppMainController extends Controller
             "car_brand" => $request->input("brand"),
             "car_model" => $request->input("model"),
             "car_color" => $request->input("color"),
-            "car_plate_number" => $request->input("plate"),
+            "car_plate" => $request->input("plate"),
             "car_description"  => $request->input("description"),
             /*
              |  TABLE: car_status

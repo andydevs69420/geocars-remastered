@@ -1,15 +1,15 @@
-<section id="{{ $attributes->get("id")?$attributes->get("id") : "mangement-page"  }}" class="d-block w-100 h-100">
+<section id="{{ $attributes->get("id")?$attributes->get("id") : "mangement-page"  }}" class="d-block py-0 py-sm-2 w-100 h-100">
 
 
     {{-- ADD CAR MODAL --}}
     <x-management.management-add-car-modal id="management__add-car-modal"></x-management.management-add-car-modal>
 
     {{-- UPDATE CAR MODAL --}}
-    <x-management.management-view-car id="management__view-car-modal"></x-management.management-view-car>
+    <x-management.management-update-car id="management__update-car-modal"></x-management.management-update-car>
 
-    <div class="container-lg">
+    <div class="container-lg p-0 p-sm-2">
 
-        <div id="management__control-panel" class="d-flex flex-column flex-sm-row justify-content-between align-items-stretch align-items-md-center p-2 bg-light rounded shadow-sm">
+        <div id="management__control-panel" class="d-flex flex-column flex-sm-row justify-content-between align-items-stretch align-items-md-center p-2 bg-light rounded-0 shadow-sm">
             <div id="management__tray-0" class="d-block">
 
                 <div class="input-group input-group-sm">
@@ -33,7 +33,7 @@
             </div>
         </div>
 
-        <div id="management__car-list" class="d-flex flex-row flex-wrap justify-content-start my-3 p-1 w-100 rounded bg-light shadow-sm">
+        <div id="management__car-list" class="d-flex flex-row flex-wrap justify-content-start my-0 my-sm-3 p-1 w-100 rounded-0 bg-light shadow-sm">
 
             @if (count($cars) <= 0)
                 <x-management.management-empty-car-list>

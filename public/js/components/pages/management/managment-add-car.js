@@ -4,12 +4,15 @@
  */
 
 
+/*
+    Add car logic
+*/
 (function(root) {
 
     let form, fields, imageField, allowSubmit = true;
 
 
-    form = $("#management-add-car-modal__form");
+    form = $("#management__add-car-modal__form");
 
     // on Form submit
     form.submit(function(e) {
@@ -56,6 +59,7 @@
                 showMessage("Successfully inserted car!");
             },
             error: (response, status, xhr) => {
+                console.log(response);
                 allowSubmit = true;
                 Object.keys(response.responseJSON.data)
                 .forEach((key) => {
@@ -67,18 +71,18 @@
 
     imageField = $("#uploader");
 
-    // on File chaged
+    // on File changed
     imageField.change((e) => {
         if (e.target.files.length > 0)
-            $("#carouselCar")
+            $("#management__add-car-modal__carouselCar")
                 .removeClass("d-none");
         else
-            $("#carouselCar")
+            $("#management__add-car-modal__carouselCar")
                 .addClass("d-none");
 
 
-        let indicatorContainer = $("#indicatorWrapper");
-        let itemContainer      = $("#carouselCarInner");
+        let indicatorContainer = $("#management__add-car-modal__indicatorWrapper");
+        let itemContainer      = $("#management__add-car-modal__carouselCarInner");
 
         indicatorContainer.empty();
         itemContainer.empty()
@@ -129,8 +133,9 @@
         fr.readAsDataURL(file);
 
 
-        indicatorContainer = $("#indicatorWrapper");
-        itemContainer      = $("#carouselCarInner");
+        indicatorContainer = $("#management__add-car-modal__indicatorWrapper");
+        itemContainer      = $("#management__add-car-modal__carouselCarInner");
+
 
         fr.onload = (frEvt) => {
             indicatorContainer?.append(
